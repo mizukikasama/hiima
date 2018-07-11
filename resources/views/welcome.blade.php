@@ -1,22 +1,17 @@
-<!doctype html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>HiiMa</title>
-</head>
-<body>
-    <form method="post">
-        {{ csrf_field() }}
-        @foreach ($tags as $tag)
-            <input type="checkbox" name="tags[]" value="{{ $tag->id }}">{{ $tag->name }}
-        @endforeach
-        <input name="body">
-        <button>ヒマ</button>
-    </form>
-    @foreach ($posts as $post)
-        <hr>
-        <p>Tags: @foreach ($post->tags as $tag) {{ $tag->name }} @endforeach </p>
-        <p>{{ $post->body }}</p>
-    @endforeach
-</body>
-</html>
+<!--auth check をつけたよ　（りさ）-->
+
+@extends('layouts.app')
+
+@section('content')
+    @if (Auth::check())
+        <?php $user = Auth::user(); ?>
+        {{ $user->name }}
+    @else
+        <div class="center jumbotron">
+            <div class="text-center">
+                <h1>HiiMa</h1>
+                {!! link_to_route('signup.get', 'Sign up now!', null, ['class' => 'btn btn-lg btn-primary']) !!}
+            </div>
+        </div>
+    @endif
+@endsection

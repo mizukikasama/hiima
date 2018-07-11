@@ -27,16 +27,12 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/home'; //homeけしたよ(りな)
 
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
+  
     public function __construct()
     {
-        $this->middleware('guest');
+        $this->middleware('guest')->except('logout'); //>except('logout')追加したよ（りな）
     }
 
     /**
@@ -48,9 +44,10 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
+            'nickname' => 'required|string|max:255',
+            'hiima_id' => 'required|string|max:191|unique:users',//追加りさ
             'password' => 'required|string|min:6|confirmed',
+            //email消したよ（りな）
         ]);
     }
 
@@ -63,9 +60,10 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
+            'nickname' => $data['nickname'],//nicknameに変えたよ（りな）
+            'hiima_id' => $data['hiima_id'],
             'password' => bcrypt($data['password']),
+            //email消したよ（りな）
         ]);
     }
 }
