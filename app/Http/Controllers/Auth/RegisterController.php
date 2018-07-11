@@ -27,7 +27,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home'; //homeけしたよ(りな)
+    protected $redirectTo = '/'; //homeけしたよ(りな)
 
   
     public function __construct()

@@ -1,6 +1,4 @@
-<!--auth check をつけたよ　（りさ）-->
-
-@extends('layouts.app')
+@extends('layouts.app')<!--auth check をつけたよ　（りさ）-->
 
 @section('content')
     @if (Auth::check())

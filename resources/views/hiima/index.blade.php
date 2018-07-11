@@ -1,7 +1,5 @@
 @extends('layouts.app')
-@section('content')
-
-<!--以下追加したよ。かほ-->
+@section('content')<!--以下追加したよ。かほ-->
 
 <!doctype html>
 <html>
