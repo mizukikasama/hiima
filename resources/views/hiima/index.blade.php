@@ -2,15 +2,7 @@
 @section('content')<!--以下追加したよ。かほ-->
 
 <!doctype html>
-<html>
-<head>
-    <div class="col-xs-8 col-xs-offset-2">
-        <meta charset="utf-8">
-        <title>HiiMa</title>
-    </div>
-</head>
 
-<body>
     <form method="post">
         {{ csrf_field() }}
         @foreach ($tags as $tag)
@@ -24,5 +16,4 @@
         <p>Tags: @foreach ($post->tags as $tag) {{ $tag->name }} @endforeach </p>
         <p>{{ $post->body }}</p>
     @endforeach
-</body>
-</html>
+@endsection

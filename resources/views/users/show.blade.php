@@ -6,18 +6,21 @@
         <aside class="col-xs-4">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title">{{ $user->name }}</h3>
+                    <h3 class="panel-title">{{ $user->nickname }}</h3>
                 </div>
                 <div class="panel-body">
-                <img class="media-object img-rounded img-responsive" src="{{ Gravatar::src($user->email, 500) }}" alt="">
+                <img class="media-object img-rounded img-responsive" src="{{ Gravatar::src($user->hiima_id, 500) }}" alt="">
                 </div>
             </div>
+            @include('user_follow.follow_button', ['user' => $user])
         </aside>
         <div class="col-xs-8">
             <ul class="nav nav-tabs nav-justified">
                 <!--<li><a href="#">TimeLine</a></li>-->
-                <li><a href="#">Followings</a></li>
-                <li><a href="#">Followers</a></li>
+                <li role="presentation" class="{{ Request::is('users/*/following') ? 'active' : '' }}"><a href="{{ route('users.following', ['id' => $user->id]) }}">Followings <span class="badge">{{ $count_following }}</span></a></li>
+                <li role="presentation" class="{{ Request::is('users/*/follower') ? 'active' : '' }}"><a href="{{ route('users.follower', ['id' => $user->id]) }}">Followers <span class="badge">{{ $count_follower }}</span></a></li>
+                <!--<li><a href="#">Followings</a></li>-->
+                <!--<li><a href="#">Followers</a></li>-->
             </ul>
         </div>
     </div>

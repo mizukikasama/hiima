@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Controllers\Controller;
+use App\Post;
+use App\Tag;
 
 class HiimaController extends Controller
 {
@@ -18,6 +20,7 @@ class HiimaController extends Controller
         $data = [];
         if (\Auth::check()) {
             $user = \Auth::user();
+        }
             // $microposts = $user->feed_microposts()->orderBy('created_at', 'desc')->paginate(10);
 
         //     $data = [
@@ -25,8 +28,9 @@ class HiimaController extends Controller
         //         'microposts' => $microposts,
         //     ];
         // }
-        return view('home.index');
-        }
+        return view('hiima.index', ['posts' => Post::all(), 'tags' => Tag::all()]);
+//        return view('hiima.index');
+    }
 
     //   public function store(Request $request)
     // {

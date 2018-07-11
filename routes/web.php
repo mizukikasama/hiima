@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/home', 'HiimaController@index');
+
 
 
 // user registration追加したよ、かほ
@@ -28,13 +28,13 @@ Route::post('login', 'Auth\LoginController@login')->name('login.post');
 Route::get('logout', 'Auth\LoginController@logout')->name('logout.get');
 
 
-
-
+Route::get('/home', 'HiimaController@index');
+/*
 //上をコメントアウト、この下足したよ。みづき
 Route::get('/home', function () {
     return view('hiima.index', ['posts' => App\Post::all(), 'tags' => App\Tag::all()]);
 });
-
+*/
 
 
 

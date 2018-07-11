@@ -1,5 +1,3 @@
-<!--全替えしたよりな-->
-
 <?php
 
 namespace App\Http\Controllers;
