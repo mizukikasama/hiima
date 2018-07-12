@@ -17,10 +17,10 @@
         <div class="col-xs-8">
             <ul class="nav nav-tabs nav-justified">
                 <!--<li><a href="#">TimeLine</a></li>-->
-                <li role="presentation" class="{{ Request::is('users/*/following') ? 'active' : '' }}"><a href="{{ route('users.following', ['id' => $user->id]) }}">Followings <span class="badge">{{ $count_following }}</span></a></li>
-                <li role="presentation" class="{{ Request::is('users/*/follower') ? 'active' : '' }}"><a href="{{ route('users.follower', ['id' => $user->id]) }}">Followers <span class="badge">{{ $count_follower }}</span></a></li>
+                <li role="presentation" class="{{ Request::is('users/*/followings') ? 'active' : '' }}"><a href="{{ route('users.followings', ['id' => $user->id]) }}">Followings <span class="badge">{{ $count_followings }}</span></a></li>
+                <li role="presentation" class="{{ Request::is('users/*/followers') ? 'active' : '' }}"><a href="{{ route('users.followers', ['id' => $user->id]) }}">Followers <span class="badge">{{ $count_followers }}</span></a></li>
                 <!--<li><a href="#">Followings</a></li>-->
-                <!--<li><a href="#">Followers</a></li>-->
+                <!--<li><a href="#">Followers< /a></li>-->
             </ul>
         </div>
     </div>
