@@ -1,5 +1,3 @@
-<!--全替えしたよりさ-->
-
 <?phpnamespace App;
 
 use Illuminate\Notifications\Notifiable;
