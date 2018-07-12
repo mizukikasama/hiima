@@ -25,7 +25,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/';//ホーム追加したよ、かほ
+    protected $redirectTo = '/home';//ホーム追加したよ、かほ
 
     /**
      * Create a new controller instance.
@@ -35,5 +35,13 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+    }
+    
+    // 以下を張り付けるとログインできるようになる（りな）
+    // AuthenticatesUsersから引っ張ってきた
+    
+     public function username()
+    {
+        return 'hiima_id'; 
     }
 }
