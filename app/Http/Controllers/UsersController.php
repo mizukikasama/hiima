@@ -17,12 +17,60 @@ class UsersController extends Controller
         ]);
     }
     
-    public function show($id) //追加りな
+    
+    public function show($id) 
     {
         $user = User::find($id);
+        // $posts = $user->posts()->orderBy('created_at', 'desc')->paginate(10); //いくつ表示させるかを変更（りな）
 
-        return view('users.show', [
+        $data = [
             'user' => $user,
-        ]);
+        //     'posts' => $posts, //microposts→postsに変更そしてコメントアウト（りな）
+        ];
+
+         $data += $this->counts($user);
+
+        return view('users.show', $data);
     }
+    
+    // 以下追加（りな）
+    
+    public function followings($id)
+    {
+        $user = User::find($id);
+        $followings = $user->followings()->paginate(10);
+
+        $data = [
+            'user' => $user,
+            'users' => $followings,
+        ];
+
+        $data += $this->counts($user);
+       // var_dump($data);
+        return view('users.followings', $data);
+    }
+
+    public function followers($id)
+    {
+        $user = User::find($id);
+        $followers = $user->followers()->paginate(10);
+
+        $data = [
+            'user' => $user,
+            'users' => $followers,
+        ];
+
+        $data += $this->counts($user);
+
+        return view('users.followers', $data);
+    }
+    
+    // public function show($id) //追加りな
+    // {
+    //     $user = User::find($id);
+
+    //     return view('users.show', [
+    //         'user' => $user,
+    //     ]);
+    // }
 }
