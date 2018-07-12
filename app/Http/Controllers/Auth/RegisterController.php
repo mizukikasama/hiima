@@ -27,7 +27,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home'; //homeけしたよ(りな)
+    protected $redirectTo = '/home'; //homeにすることでサインアップ後にhiima.indexを表示することができるよ！りな
 
   
     public function __construct()

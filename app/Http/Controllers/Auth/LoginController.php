@@ -36,4 +36,12 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+    
+    // 以下を張り付けるとログインできるようになる（りな）
+    // AuthenticatesUsersから引っ張ってきた
+    
+     public function username()
+    {
+        return 'hiima_id'; 
+    }
 }
