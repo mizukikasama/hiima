@@ -13,6 +13,7 @@
     </form>
     @foreach ($posts as $post)
         <hr>
+        <p>Users: {{$userIdFromPostId[''.$post->id]??''}}</p> <!--追加したよ。ばなな-->
         <p>Tags: @foreach ($post->tags as $tag) {{ $tag->name }} @endforeach </p>
         <p>{{ $post->body }}</p>
     @endforeach

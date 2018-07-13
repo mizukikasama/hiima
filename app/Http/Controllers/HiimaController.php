@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Post;
 use App\Tag;
+use App\User;
 
 class HiimaController extends Controller
 {
@@ -18,6 +19,7 @@ class HiimaController extends Controller
        public function index()
     {
         $data = [];
+        
         if (\Auth::check()) {
             $user = \Auth::user();
         }
@@ -28,7 +30,24 @@ class HiimaController extends Controller
         //         'microposts' => $microposts,
         //     ];
         // }
-        return view('hiima.index', ['posts' => Post::all(), 'tags' => Tag::all()]);
+        
+        
+        $vs = User::join('post_tag', 'users.id', '=', 'post_tag.user_id')->get();
+    
+        $userIdFromPostId = array();
+        foreach($vs as $v) {
+            $userIdFromPostId["".$v->post_id] = $v->nickname;
+        }
+      //  var_dump($userIdFromPostId);
+    //    return;
+//        return view('hiima.index', ['posts' => Post::all(), 'users' => User::all(), 'tags' => Tag::all()]);
+        return view('hiima.index', [
+            'posts' => Post::orderBy('created_at', 'desc')->get(), //ここいじると表示順が変わるよ。ばなな
+            'userIdFromPostId' => $userIdFromPostId,
+            'users' => User::all(), 'tags' => Tag::all()]);
+
+        //users足したよ。ばなな
+        
 //        return view('hiima.index');
     }
 
