@@ -45,7 +45,8 @@ Route::post('/home', function () {
     $post = new App\Post();
     $post->body = request()->body;
     $post->save();
-    $post->tags()->attach(request()->tags);
+    //$post->users()->attach(request()->users); //足したよ。ばなな
+    $post->tags()->attach(request()->tags,['user_id' => \Auth::user()->id]);
     return redirect('/home');
 });
 
