@@ -40,7 +40,9 @@ Route::get('/home', function () {
 */
 
 
+Route::post('/home', 'HiimaController@store');
 
+/*
 Route::post('/home', function () {
     $post = new App\Post();
     $post->body = request()->body;
@@ -49,7 +51,7 @@ Route::post('/home', function () {
     $post->tags()->attach(request()->tags,['user_id' => \Auth::user()->id]);
     return redirect('/home');
 });
-
+*/
 
 //following機能追加しちょ（あき）
 Route::group(['middleware' => 'auth'], function () {
