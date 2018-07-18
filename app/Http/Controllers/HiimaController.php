@@ -9,6 +9,7 @@ use App\Post;
 use App\Tag;
 use App\User;
 use App\Http\Requests\Formrequest;
+use Illuminate\Support\Facades\DB;
 
 class HiimaController extends Controller
 {
@@ -75,6 +76,7 @@ class HiimaController extends Controller
            $datap->tags()->attach($request->tags,['user_id' => \Auth::user()->id]);  
         }
 
+
         //バリデーションOK
 
         //fileは個別に処理このへんいらなそうだから消してるよリサ
@@ -97,7 +99,30 @@ class HiimaController extends Controller
         return redirect('/home?errorMessage='.urlencode($errorMessage));
 //        return view('hiima.index',$data);
         }
+    
+    //追加りな（削除ボタン）
+    public function destroy($id) 
+    {
+        $post = Post::find($id); //Postモデルに変更（Hiimaモデルなんてない）
+
+        // if (\Auth::id() === $post->user_id) {
+        //     $post->delete();
+        // }いらないuserでチェックする必要なし。
+        // postのidがかぶることはないから
+
+         // postsテーブルのidとpost_tagテーブルのpost_idが、$idに一致したものを消したい。
+        //  $idとは、web.phpで/home/{id}で引数を設定したもの
+        // index.blade参照
+        DB::table('posts')->where('id', '=', $id)->delete();
+        DB::table('post_tag')->where('post_id', '=',$id)->delete(); 
+       
+        
+        return redirect("/home");
     }
+    
+}
+
+
 
     //   public function store(Request $request)
     // {
@@ -121,3 +146,4 @@ class HiimaController extends Controller
 
     //     return redirect()->back();
     // }
+
