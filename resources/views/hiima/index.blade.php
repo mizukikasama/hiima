@@ -2,10 +2,11 @@
 @section('content')<!--以下追加したよ。かほ-->
 
 <!doctype html><!--エラー追加したよ。りさ-->
+<h1>今日何したい？</h1>
+<h2>場所を選択してね</h2>
    {{$errorMessage}}
     <form method="post">
         {{ csrf_field() }}
-        
         <!--tag-->
         <div class="form-group @if(!empty($errors->first('name'))) has-error @endif">
             @foreach ($tags as $tag)
@@ -15,9 +16,9 @@
             @endforeach
         </div>
         
-        <!--body-->
+        <!--body plaeholder追加、かほ-->
         <div class="form-group @if(!empty($errors->first('body'))) has-error @endif">
-            <input type="text" name="body" value="{{old('name')}}" class="form-control">
+            <input type="text" placeholder="今日何したい？(例:2人でパンケーキ食べたい)" name="body" value="{{old('name')}}" class="form-control">
             <span class="help-block">{{$errors->first('body')}}</span>
         </div>
         
