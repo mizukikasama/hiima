@@ -14,8 +14,8 @@ class Post extends Model
     
     public function tags()//足したよ。みづき
     {
-        return $this->belongsToMany(Tag::class);
-        
+        return $this->belongsToMany(Tag::class)->withPivot('user_id');
+        // post_tag : id, post_id, tag_id, user_id
     }
     
 
