@@ -22,7 +22,8 @@
         
         <!--body plaeholder追加、かほ-->
         <div class="form-group @if(!empty($errors->first('body'))) has-error @endif">
-            <input type="text" placeholder="今日何したい？(例:2人でパンケーキ食べたい)" name="body" value="{{old('name')}}" class="form-control">
+            <textarea input type="textarea" placeholder="今日何したい？(例:2人でパンケーキ食べたい)" name="body" value="{{old('name')}}" class="form-control"></textarea> 
+            <!--textarea追加りな-->
             <span class="help-block">{{$errors->first('body')}}</span>
         </div>
         
@@ -31,8 +32,31 @@
     
     @foreach ($posts as $post)
         <hr>
-        <p>Users: {{$userIdFromPostId[''.$post->id]??''}}</p> <!--追加したよ。ばなな-->
-        <p>Tags: @foreach ($post->tags as $tag) {{ $tag->name }} @endforeach </p>
-        <p>{{ $post->body }}</p>
+        <p>ユーザー名: {{$userIdFromPostId[''.$post->id]??''}}</p> <!--追加したよ。ばなな-->
+        <p>カテゴリー: @foreach ($post->tags as $tag) {{ $tag->name }} @endforeach </p>
+        <p>内容: {{ $post->body }}</p>
+         <p>投稿時間: {{ $post->created_at }}</p>
+
+
+            <div>
+                <?php 
+                $user_id = $post->tags()->get()[0]->pivot->user_id;
+               // echo App\User::find($user_id)->name;
+                ?>
+                @if (Auth::user()->id == $user_id)
+                    {!! Form::open(['route' => ['hiima.destroy', $post->id], 'method' => 'delete']) !!}
+                    
+                     <!--{{ Form::hidden('invisible',$post->id)}}-->
+                    
+                        {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-xs']) !!}
+                    {!! Form::close() !!}
+                @endif
+            </div>
     @endforeach
+
+
+         
+
 @endsection
+
+
