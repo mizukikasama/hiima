@@ -42,6 +42,11 @@ Route::get('/home', function () {
 
 Route::post('/home', 'HiimaController@store');
 
+Route::delete('/home/{id}', 'HiimaController@destroy')->name('hiima.destroy');
+// laravelの引数を指定するときの書き方/home/{id}で$idを設定している
+
+
+
 /*
 Route::post('/home', function () {
     $post = new App\Post();
