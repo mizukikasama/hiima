@@ -10,7 +10,7 @@
 
             {!! Form::open(['route' => 'login.post']) !!}
                 <div class="form-group">
-                    {!! Form::label('hiima_id', 'アカウント') !!}
+                    {!! Form::label('hiima_id', 'アカウント名') !!}
                     {!! Form::text('hiima_id', old('hiima_id'), ['class' => 'form-control'])!!}
                 </div>
                     

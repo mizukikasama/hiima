@@ -28,7 +28,7 @@
 
                 <div class="form-group">
                     {!! Form::label('password', 'パスワード') !!}
-                    {!! Form::text('hiima_id', null, ['class' => 'form-control' ,'placeholder' => '半角英数字を6文字以上入力してください']) !!}
+                    {!! Form::password('password', ['class' => 'form-control' ,'placeholder' => '半角英数字を6文字以上入力してください']) !!}
                     <br>
                         <!--<p>6文字以上入力してください</p>-->
                     <!--{!! Form::password('password', ['class' => 'form-control']) !!}-->
@@ -36,7 +36,7 @@
 
                 <div class="form-group">
                     {!! Form::label('password_confirmation', 'パスワード確認用') !!}
-                    {!! Form::text('password_confirmation', null, ['class' => 'form-control' ,'placeholder' => '確認のためもう一度入力してください']) !!}
+                    {!! Form::password('password_confirmation',['class' => 'form-control' ,'placeholder' => '確認のためもう一度入力してください']) !!}
                         <br>
                         <!--<p>確認のためもう一度入力してください</p>-->
                     <!--{!! Form::password('password_confirmation', ['class' => 'form-control']) !!}-->
