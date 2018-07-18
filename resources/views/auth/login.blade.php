@@ -11,8 +11,9 @@
             {!! Form::open(['route' => 'login.post']) !!}
                 <div class="form-group">
                     {!! Form::label('hiima_id', 'ID') !!}
-                    {!! Form::text('hiima_id', old('hiima_id'), ['class' => 'form-control']) !!}
+                    {!! Form::text('hiima_id', old('hiima_id'), ['class' => 'form-control'])!!}
                 </div>
+                    
 
                 <div class="form-group">
                     {!! Form::label('password', 'Password') !!}
