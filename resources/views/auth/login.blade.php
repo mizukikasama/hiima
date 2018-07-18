@@ -10,13 +10,13 @@
 
             {!! Form::open(['route' => 'login.post']) !!}
                 <div class="form-group">
-                    {!! Form::label('hiima_id', 'ID') !!}
+                    {!! Form::label('hiima_id', 'アカウント') !!}
                     {!! Form::text('hiima_id', old('hiima_id'), ['class' => 'form-control'])!!}
                 </div>
                     
 
                 <div class="form-group">
-                    {!! Form::label('password', 'Password') !!}
+                    {!! Form::label('password', 'パスワード') !!}
                     {!! Form::password('password', ['class' => 'form-control']) !!}
                 </div>
 
