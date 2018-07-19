@@ -29,8 +29,6 @@
     {{Form::close()}}
     
     @foreach ($posts as $post)
-        <hr>
-        <p>{!! link_to_route('users.show', $user->name, ['id' => $user->id]) !!}</p>
         <p>ユーザー名: {{$userIdFromPostId[''.$post->id]??''}}</p> <!--追加したよ。ばなな-->
         <p>カテゴリー: @foreach ($post->tags as $tag) {{ $tag->name }} @endforeach </p>
         <p>内容: {{ $post->body }}</p>
