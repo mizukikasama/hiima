@@ -10,8 +10,9 @@
         <!--tag-->
         <div class="form-group @if(!empty($errors->first('name'))) has-error @endif">
             @foreach ($tags as $tag)
+            <!--{!! Form::label('choice[]','選択') !!}-->
+            <!--{!! Form::checkbox('choice[]','{{ $tag->id }}') !!}{{ $tag->name }}-->
             <input type="checkbox" name="tags" value="{{ $tag->id }}">{{ $tag->name }}
-            <!--<input class=”top_title” name=”title” type=”text” value=”WinRoad徒然草“>-->
             <span class="help-block">{{$errors->first('name')}}</span>
             @endforeach
         </div>
