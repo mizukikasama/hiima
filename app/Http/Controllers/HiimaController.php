@@ -62,18 +62,20 @@ class HiimaController extends Controller
         $result=Post::create(
             [\Form::text("body","{{old('name')}}",['class'=>"form-control"])
             ]);*/
-        
         $errorMessage = '';
         if(empty($_POST['body']??'') || empty($_POST['tags']??'')) {
             $errorMessage =  '必須項目です。';
         } else {
-            $datap = new Post;
-         //   $datat = new Tag;
-            $datap->body = $request->body;
-        //    $datat->name = $request->tag;
-            $datap->save();
-         // insert into `post_tag` (`post_id`, `tag_id`) values (5, 1
-            $datap->tags()->attach($request->tags,['user_id' => \Auth::user()->id]);  
+            // foreach($request->tags as $tag)
+                // {
+                    $datap = new Post;
+                 //   $datat = new Tag;
+                    $datap->body = $request->body;
+                //    $datat->name = $request->tag;
+                    $datap->save();
+                 // insert into `post_tag` (`post_id`, `tag_id`) values (5, 1
+                    $datap->tags()->attach($request->tags,['user_id' => \Auth::user()->id]);
+                // }
         }
 
 

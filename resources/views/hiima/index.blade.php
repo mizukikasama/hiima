@@ -5,14 +5,15 @@
 <h1>今日何したい？</h1>
 <h2>場所を選択してね</h2>
    {{$errorMessage}}
-    <form method="post">
+   {{Form::open(['route'=>'hiima.store'])}}
+    <!--<form method="post" action=hiima.store>-->
         {{ csrf_field() }}
         <!--tag-->
         <div class="form-group @if(!empty($errors->first('name'))) has-error @endif">
             @foreach ($tags as $tag)
-            <!--{!! Form::label('choice[]','選択') !!}-->
-            <!--{!! Form::checkbox('choice[]','{{ $tag->id }}') !!}{{ $tag->name }}-->
-            <input type="checkbox" name="tags" value="{{ $tag->id }}">{{ $tag->name }}
+            {!! Form::label('tags[]','選択') !!}
+            {!! Form::checkbox('tags[]',$tag->id, null ) !!}{{ $tag->name }}
+            <!--<input type="checkbox" name="tags" value="{{ $tag->id }}">{{ $tag->name }}-->
             <span class="help-block">{{$errors->first('name')}}</span>
             @endforeach
         </div>
@@ -25,7 +26,7 @@
         </div>
         
         <button>ヒマ</button>
-    </form>
+    {{Form::close()}}
     
     @foreach ($posts as $post)
         <hr>
