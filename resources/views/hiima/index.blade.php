@@ -29,17 +29,17 @@
     {{Form::close()}}
     
     @foreach ($posts as $post)
-        <p>ユーザー名: {{$userIdFromPostId[''.$post->id]??''}}</p> <!--追加したよ。ばなな-->
-        <p>カテゴリー: @foreach ($post->tags as $tag) {{ $tag->name }} @endforeach </p>
-        <p>内容: {{ $post->body }}</p>
-         <p>投稿時間: {{ $post->created_at }}</p>
-
-
-            <div>
                 <?php 
                 $user_id = $post->tags()->get()[0]->pivot->user_id;
                // echo App\User::find($user_id)->name;
                 ?>
+        <!--<li>{!! link_to_route('users.show', $userIdFromPostId[''.$post->id]??'', ['id' => Auth::id()]) !!}</li>-->
+        <p>ユーザー名: {!! link_to_route('users.show', $userIdFromPostId[''.$post->id]??'', ['id' => $user_id]) !!}</p> <!--追加したよ。ばなな-->
+        <p>カテゴリー: @foreach ($post->tags as $tag) {{ $tag->name }} @endforeach </p>
+        <p>内容: {{ $post->body }}</p>
+         <p>投稿時間: {{ $post->created_at }}</p>
+            <div>
+
                 @if (Auth::user()->id == $user_id)
                     {!! Form::open(['route' => ['hiima.destroy', $post->id], 'method' => 'delete']) !!}
                     
