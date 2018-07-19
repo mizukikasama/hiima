@@ -119,6 +119,7 @@ class HiimaController extends Controller
         
         return redirect("/home");
     }
+ 
     
 }
 
