@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')<!--内容を確認するよリサ-->
 
-    <h1>内容表示</h1>
+    <h1>id = {{ $post->id }}のヒマ詳細表示</h1>
 
     <div class="row">
         <div class="col-sm-12">
@@ -11,6 +11,7 @@
 
     <!-- table -->
     <table class="table table-striped">
+        
         <tr><td>タグ</td><td>{{$inputs["name"]}}</tr>
         <tr><td>内容</td><td>{{$inputs["body"]}}</tr>
     </table>
