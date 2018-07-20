@@ -1,9 +1,16 @@
+
 @extends('layouts.app')
 @section('content')<!--以下追加したよ。かほ-->
 
-<!doctype html><!--エラー追加したよ。りさ-->
-<h1>今日何したい？</h1>
-<h2>場所を選択してね</h2>
+<!doctype html> <!--エラー追加したよ。りさ-->
+<link rel="stylesheet" href="{{ secure_asset('css/hiima.css') }}">
+<p class= "pagetop">
+    <a href="#top" title="ページトップへ戻る">
+    <img src="css/hiimafinal.jpg"/>
+    </a>
+</p>
+<h1 id="top">まずは自分のヒマを提供しよう！</h1>
+<h5>場所を選択してね</h5>
    {{$errorMessage}}
    {{Form::open(['route'=>'hiima.store'])}}
     <!--<form method="post" action=hiima.store>-->
@@ -11,24 +18,44 @@
         <!--tag-->
         <div class="form-group @if(!empty($errors->first('name'))) has-error @endif">
             @foreach ($tags as $tag)
+<<<<<<< HEAD
+            <label class="label-checkbox">
+                <input type="checkbox" name="tags" value="{{ $tag->id }}">
+                <span class="lever">{{ $tag->name }}</span>
+            </label>
+            <!--<input class=”top_title” name=”title” type=”text” value=”WinRoad徒然草“>-->
+=======
             {!! Form::label('tags[]','選択') !!}
             {!! Form::checkbox('tags[]',$tag->id, null ) !!}{{ $tag->name }}
             <!--<input type="checkbox" name="tags" value="{{ $tag->id }}">{{ $tag->name }}-->
+>>>>>>> 887fa8c4d1ebe5d15e245b4dff139fd5eead9c3e
             <span class="help-block">{{$errors->first('name')}}</span>
             @endforeach
         </div>
-        
         <!--body plaeholder追加、かほ-->
         <div class="form-group @if(!empty($errors->first('body'))) has-error @endif">
             <textarea input type="textarea" placeholder="今日何したい？(例:2人でパンケーキ食べたい)" name="body" value="{{old('name')}}" class="form-control"></textarea> 
             <!--textarea追加りな-->
             <span class="help-block">{{$errors->first('body')}}</span>
         </div>
+<<<<<<< HEAD
+        {!! Form::submit('ヒマ', ['class' => 'btn btn-warning btn-lg']) !!}
+    </form>
+        @foreach ($posts as $post)
+        <div class ="posts">
+        <hr>
+        <p>ユーザー名: {{$userIdFromPostId[''.$post->id]??''}}</p> <!--追加したよ。ばなな-->
+        <p>カテゴリー: @foreach ($post->tags as $tag) {{ $tag->name }} @endforeach </p>
+        <p>内容: {{ $post->body }}</p>
+         <p>投稿時間: {{ $post->created_at }}</p>
+            
+=======
         
         <button>ヒマ</button>
     {{Form::close()}}
     
     @foreach ($posts as $post)
+>>>>>>> 887fa8c4d1ebe5d15e245b4dff139fd5eead9c3e
                 <?php 
                 $user_id = $post->tags()->get()[0]->pivot->user_id;
                // echo App\User::find($user_id)->name;
@@ -51,10 +78,4 @@
                 @endif
             </div>
     @endforeach
-
-
-         
-
 @endsection
-
-
