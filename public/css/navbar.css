@@ -1,3 +1,7 @@
+.navbar{
+  font-family: 'Amatic SC', cursive;
+}
+
 /* navbar 全体の背景色とボーダーカラー */
 .navbar-default {
 background-color: #6666CC;

@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="{{ secure_asset('css/hiima.css') }}">
 <p class= "pagetop">
     <a href="#top" title="ページトップへ戻る">
-    <img src="css/hiimafinal.jpg"/>
+    <img src="css/hiima.logo.png"/>
     </a>
 </p>
 <h1 id="top">まずは自分のヒマを提供しよう！</h1>
