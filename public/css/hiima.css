@@ -188,6 +188,11 @@ h1, h5, p{
     bottom: 16px;
     right: 16px;
     }
+    
+.pagetop img {
+    width: 80px;
+    height: 80px;
+}
  
 .pagetop a
     {

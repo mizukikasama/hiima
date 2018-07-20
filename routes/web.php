@@ -42,7 +42,7 @@ Route::post('/home', 'HiimaController@store')->name('hiima.store');
 Route::delete('/home/{id}', 'HiimaController@destroy')->name('hiima.destroy');
 // laravelの引数を指定するときの書き方/home/{id}で$idを設定している
 
-//hiima詳細
+//hiima詳細、申請
 Route::view('show','hiima.show')->name('hiima.show');
 Route::resource('hiima','HiimaController');
 
@@ -82,5 +82,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('followers', 'UsersController@followers')->name('users.followers');
         
     });
+      //足したよ//aki 
+    Route::resource('histories', 'Controller', ['only' => ['store', 'destroy']]);
 });
 
