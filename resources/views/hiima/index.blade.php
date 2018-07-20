@@ -32,7 +32,7 @@
             <!--textarea追加りな-->
             <span class="help-block">{{$errors->first('body')}}</span>
         </div>
-        {!! Form::submit('ヒマ', ['class' => 'btn btn-warning btn-lg']) !!}
+        {!! Form::submit('Share', ['class' => 'btn btn-warning btn-lg']) !!}
     <!--</form>-->
     {{Form::close()}}
     

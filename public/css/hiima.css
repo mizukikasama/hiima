@@ -204,3 +204,7 @@ h1, h5, p{
 {
     opacity: 0.85 ;
 }
+
+.btn{
+     font-family: 'Amatic SC', cursive;
+}
