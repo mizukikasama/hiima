@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="{{ secure_asset('css/hiima.css') }}">
+
 @extends('layouts.app')
 @section('content')<!--内容を確認するよリサ-->
 
