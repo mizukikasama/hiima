@@ -74,4 +74,65 @@ public function unfollow($userId)
 public function is_following($userId) {
     return $this->followings()->where('follow_id', $userId)->exists();
 }
+
+static function image_map($user_id) {
+    $array = [
+        '1' => 'image/logo1.jpg',
+        '2' => 'image/logo2.jpg', 
+        '3' => 'image/logo3.jpg',
+        '4' => 'image/logo4.jpg',
+        '5' => 'image/logo5.jpg', 
+        '6' => 'image/logo1.jpg',
+        '7' => 'image/logo2.jpg',
+        '8' => 'image/logo3.jpg', 
+        '9' => 'image/logo4jpg',
+        '10' => 'image/logo5.jpg',
+        '11' => 'image/logo1.jpg', 
+        '12' => 'image/logo2.jpg',
+        '13' => 'image/logo3.jpg',
+        '14' => 'image/logo4.jpg', 
+        '15' => 'image/logo5.jpg',
+        '16' => 'image/logo1.jpg',
+        '17' => 'image/logo2.jpg', 
+        '18' => 'image/logo3.jpg',
+        '19' => 'image/logo4.jpg',
+        '20' => 'image/logo5.jpg', 
+        '21' => 'image/logo1.jpg',
+        '22' => 'image/logo2.jpg',
+        '23' => 'image/logo3.jpg', 
+        '24' => 'image/logo4.jpg',
+        '25' => 'image/logo5.jpg',
+        '26' => 'image/logo1.jpg', 
+        '27' => 'image/logo2.jpg',
+        '28' => 'image/logo3.jpg',
+        '29' => 'image/logo4.jpg', 
+        '30' => 'image/logo5.jpg',
+        '31' => 'image/logo1.jpg',
+        '32' => 'image/logo2.jpg', 
+        '33' => 'image/logo3.jpg',
+        '34' => 'image/logo4.jpg',
+        '35' => 'image/logo5.jpg', 
+        '36' => 'image/logo1.jpg',
+        '37' => 'image/logo2.jpg',
+        '38' => 'image/logo3.jpg', 
+        '39' => 'image/logo4.jpg',
+        '40' => 'image/logo5.jpg',
+        '41' => 'image/logo1.jpg', 
+        '42' => 'image/logo2.jpg',
+        '43' => 'image/logo3.jpg',
+        '44' => 'image/logo4.jpg', 
+        '45' => 'image/logo5.jpg',
+        '46' => 'image/logo1.jpg',
+        '47' => 'image/logo2.jpg', 
+        '48' => 'image/logo3.jpg',
+        '49' => 'image/logo4.jpg',
+        '50' => 'image/logo5.jpg', 
+      
+        
+        // ここを複製しまくる明日
+    ];
+    // var_dump(11111111);
+    // exit;
+    return $array[$user_id];
+}
 }
