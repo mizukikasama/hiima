@@ -1,4 +1,3 @@
-
 @extends('layouts.app')
 @section('content')<!--以下追加したよ。かほ-->
 
@@ -18,17 +17,12 @@
         <!--tag-->
         <div class="form-group @if(!empty($errors->first('name'))) has-error @endif">
             @foreach ($tags as $tag)
-<<<<<<< HEAD
             <label class="label-checkbox">
-                <input type="checkbox" name="tags" value="{{ $tag->id }}">
-                <span class="lever">{{ $tag->name }}</span>
+                    <!--<input type="checkbox" name="tags" value="{{ $tag->id }}">-->
+                    <!--<span class="lever">{{ $tag->name }}</span>-->
+                {!! Form::label('tags[]','選択') !!}
+                {!! Form::checkbox('tags[]',$tag->id, null ) !!}<span class="lever">{{ $tag->name }}</span>
             </label>
-            <!--<input class=”top_title” name=”title” type=”text” value=”WinRoad徒然草“>-->
-=======
-            {!! Form::label('tags[]','選択') !!}
-            {!! Form::checkbox('tags[]',$tag->id, null ) !!}{{ $tag->name }}
-            <!--<input type="checkbox" name="tags" value="{{ $tag->id }}">{{ $tag->name }}-->
->>>>>>> 887fa8c4d1ebe5d15e245b4dff139fd5eead9c3e
             <span class="help-block">{{$errors->first('name')}}</span>
             @endforeach
         </div>
@@ -38,24 +32,12 @@
             <!--textarea追加りな-->
             <span class="help-block">{{$errors->first('body')}}</span>
         </div>
-<<<<<<< HEAD
         {!! Form::submit('ヒマ', ['class' => 'btn btn-warning btn-lg']) !!}
-    </form>
-        @foreach ($posts as $post)
-        <div class ="posts">
-        <hr>
-        <p>ユーザー名: {{$userIdFromPostId[''.$post->id]??''}}</p> <!--追加したよ。ばなな-->
-        <p>カテゴリー: @foreach ($post->tags as $tag) {{ $tag->name }} @endforeach </p>
-        <p>内容: {{ $post->body }}</p>
-         <p>投稿時間: {{ $post->created_at }}</p>
-            
-=======
-        
-        <button>ヒマ</button>
+    <!--</form>-->
     {{Form::close()}}
     
     @foreach ($posts as $post)
->>>>>>> 887fa8c4d1ebe5d15e245b4dff139fd5eead9c3e
+    <div class ="posts">
                 <?php 
                 $user_id = $post->tags()->get()[0]->pivot->user_id;
                // echo App\User::find($user_id)->name;
@@ -77,5 +59,6 @@
                     {!! Form::close() !!}
                 @endif
             </div>
+    </div>
     @endforeach
 @endsection

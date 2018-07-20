@@ -30,7 +30,7 @@ body{
     position: absolute;    
     top: -7px;
     width: 2px;
-    height: -webkit-calc(100% + 14px);
+    /*height: -webkit-calc(100% + 14px);*/
     height: calc(100% + 14px);
     background-color: black;
 }
