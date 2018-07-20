@@ -1,11 +1,13 @@
 <!--全替えリナ-->
-
+  <link rel="stylesheet" href="{{ secure_asset('css/icon.css') }}">
 @if (count($users) > 0)
 <ul class="media-list">
 @foreach ($users as $user)
     <li class="media">
         <div class="media-left">
-            <img class="media-object img-rounded" src="{{ Gravatar::src($user->hiima_id, 50) }}" alt="">
+        
+         <img class="media-left media-object img-rounded" src="{{ asset(App\User::image_map($user->id))}}" alt="" >
+              
         </div>
         <div class="media-body">
             <div>
@@ -22,3 +24,6 @@
 </ul>
 {!! $users->render() !!}
 @endif
+
+
+    
