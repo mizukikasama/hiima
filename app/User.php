@@ -135,4 +135,20 @@ static function image_map($user_id) {
     // exit;
     return $array[$user_id];
 }
+
+public function feed_histories()
+    {
+//$follow_user_ids = $this->followings()-> pluck('users.id')->toArray();
+  //      $follow_user_ids[] = $this->id;
+        //return Post::whereIn('user_id', $follow_user_ids);//
+       
+        $results = \DB::select('select * from post_tag where user_id = :id', ['id' => $this->id]);
+/*        foreach($results as $result) {
+            User::find($result->user_id);
+            Post::find($result->post_id);
+            Tag::find($result->tag_id);
+            }
+        }*/
+        return $results;
+    }
 }

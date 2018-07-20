@@ -85,5 +85,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('followers', 'UsersController@followers')->name('users.followers');
         
     });
+      //足したよ//aki 
+    Route::resource('histories', 'Controller', ['only' => ['store', 'destroy']]);
 });
 
