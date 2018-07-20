@@ -20,7 +20,7 @@
             <label class="label-checkbox">
                     <!--<input type="checkbox" name="tags" value="{{ $tag->id }}">-->
                     <!--<span class="lever">{{ $tag->name }}</span>-->
-                {!! Form::label('tags[]','選択') !!}
+                {!! Form::label('tags[]',' ') !!}
                 {!! Form::checkbox('tags[]',$tag->id, null ) !!}<span class="lever">{{ $tag->name }}</span>
             </label>
             <span class="help-block">{{$errors->first('name')}}</span>
@@ -32,7 +32,7 @@
             <!--textarea追加りな-->
             <span class="help-block">{{$errors->first('body')}}</span>
         </div>
-        {!! Form::submit('ヒマ', ['class' => 'btn btn-warning btn-lg']) !!}
+        {!! Form::submit('Share', ['class' => 'btn btn-warning btn-lg']) !!}
     <!--</form>-->
     {{Form::close()}}
     

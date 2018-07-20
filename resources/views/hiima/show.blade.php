@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="{{ secure_asset('css/hiima.css') }}">
+
 @extends('layouts.app')
 @section('content')<!--内容を確認するよリサ-->
 
@@ -20,11 +22,18 @@
         <tr>
             <th>したいこと</th>
             <td>{{ $post->body }}</td>
-        </tr>       
-        
-        <!--<tr><td>タグ</td><td>{{$inputs["name"]??""}}</tr>-->
-        <!--<tr><td>内容</td><td>{{$inputs["body"]??""}}</tr>-->
-        
+        </tr> 
+        <tr>
+            <th>参加者</th>
+            <td>
+            @foreach($user_id as $user)
+                {{ $user->nickname }}  
+            @endforeach
+            </td>
+        </tr> 
     </table>
+    
+    {!! link_to_route('hiima.show', '一緒にヒマをつぶそう', ['id' => $post->id], ['class' => 'btn btn-default']) !!}
 
-@stop
+    
+@endsection

@@ -8,7 +8,7 @@
         <title>HiiMa</title>
 
         <!-- Bootstrap -->
-        <!--りなhajimete.cssへのlink rel 追加--> <!--ばななwelcome.cssへのlink rel 追加-->
+        <!--りなhajimete.cssへのlink rel 追加-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="{{ secure_asset('css/hajimete.css') }}">
         <link rel="stylesheet" href="{{ secure_asset('css/icon.css') }}">

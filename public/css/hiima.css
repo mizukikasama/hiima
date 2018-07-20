@@ -192,8 +192,8 @@ h1, h5, p{
 .pagetop img {
     width: 80px;
     height: 80px;
-      animation: pulse_460 4s linear infinite;
-  transform-origin: 50% 50%;
+    animation: pulse_460 4s linear infinite;
+    transform-origin: 50% 50%;
 }
 
 @keyframes pulse_460 {
@@ -213,4 +213,9 @@ h1, h5, p{
 .pagetop:hover
 {
     opacity: 0.85 ;
+}
+
+.btn{
+     font-family: 'Amatic SC', cursive;
+     font-size: 15px;
 }
