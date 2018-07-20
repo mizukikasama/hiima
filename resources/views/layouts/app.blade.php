@@ -8,7 +8,14 @@
         <title>HiiMa</title>
 
         <!-- Bootstrap -->
+        <!--りなhajimete.cssへのlink rel 追加--> <!--ばななwelcome.cssへのlink rel 追加-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{{ secure_asset('css/hajimete.css') }}">
+<<<<<<< HEAD
+        <link rel="stylesheet" href="{{ secure_asset('css/icon.css') }}">
+=======
+        <link rel="stylesheet" href="{{ secure_asset('css/welcome.css') }}">
+>>>>>>> 60ee6b866f59e0e2c6b9b35e74d35be9cd2fb379
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <!--<link rel="stylesheet" href="{{ secure_asset('css/hiima.css') }}">　<!--ミヅキチーム-->-->

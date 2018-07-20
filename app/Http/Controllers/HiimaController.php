@@ -21,7 +21,9 @@ class HiimaController extends Controller
     public function index()
         {
         $data = [];
-        
+            if(false == \Auth::check()){
+        return redirect('/');
+    }
         if (\Auth::check()) {
             $user = \Auth::user();
         }
@@ -55,25 +57,27 @@ class HiimaController extends Controller
 //        return view('hiima.index');
     }
     
-    public function store(Request $request)
+        public function store(Request $request)
         {/*
         $result=Tag::create(
             [\Form::text("tags","{{ $tag->id }}",['class'=>""])]);
         $result=Post::create(
             [\Form::text("body","{{old('name')}}",['class'=>"form-control"])
             ]);*/
-        
         $errorMessage = '';
         if(empty($_POST['body']??'') || empty($_POST['tags']??'')) {
             $errorMessage =  '必須項目です。';
         } else {
-            $datap = new Post;
-         //   $datat = new Tag;
-            $datap->body = $request->body;
-        //    $datat->name = $request->tag;
-            $datap->save();
-         // insert into `post_tag` (`post_id`, `tag_id`) values (5, 1
-           $datap->tags()->attach($request->tags,['user_id' => \Auth::user()->id]);  
+            // foreach($request->tags as $tag)
+                // {
+                    $datap = new Post;
+                 //   $datat = new Tag;
+                    $datap->body = $request->body;
+                //    $datat->name = $request->tag;
+                    $datap->save();
+                 // insert into `post_tag` (`post_id`, `tag_id`) values (5, 1
+                    $datap->tags()->attach($request->tags,['user_id' => \Auth::user()->id]);
+                // }
         }
 
 
@@ -119,6 +123,33 @@ class HiimaController extends Controller
         
         return redirect("/home");
     }
+ 
+    
+    //なんだろうこれ
+    
+    //     private $CHOICE_WEIGHT = ["選択肢１" => "1",
+    //         "選択肢２" => "2",
+    //         "選択肢３" => "4"];
+ 
+    // public function getChoiceAttribute($value){
+    //     //合計値であるDBの値を要素に分解してモデルで利用する
+    //     $c = [];
+    //     foreach($this->CHOICE_WEIGHT as $key => $cn){
+    //         if(($this->CHOICE_WEIGHT[$key] & $value) > 0){
+    //             $c[] = $this->CHOICE_WEIGHT[$key];
+    //         }
+    //     }
+    //     return $c;     
+    // }
+    // public function setChoiceAttribute($value){
+    //     //DB格納時は要素の合計値をDBに設定する
+    //     $all = 0;
+    //     foreach($value as $c){
+    //         $all += $c;
+    //     }
+    //     $this->attributes["choice"]=$all;
+    // }
+
     
 }
 

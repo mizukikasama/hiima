@@ -9,7 +9,8 @@
                     <h3 class="panel-title">{{ $user->nickname }}</h3>
                 </div>
                 <div class="panel-body">
-                <img class="media-object img-rounded img-responsive" src="{{ Gravatar::src($user->hiima_id, 500) }}" alt="">
+                    <!--この下変更しましたりな（アイコン設定）-->
+                <img class="media-object img-rounded img-responsive" src="{{ asset(App\User::image_map($user->id))}}" alt="">
                 </div>
             </div>
             @include('user_follow.follow_button', ['user' => $user])

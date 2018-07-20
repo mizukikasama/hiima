@@ -12,16 +12,23 @@
 <h1 id="top">まずは自分のヒマを提供しよう！</h1>
 <h5>場所を選択してね</h5>
    {{$errorMessage}}
-    <form method="post">
+   {{Form::open(['route'=>'hiima.store'])}}
+    <!--<form method="post" action=hiima.store>-->
         {{ csrf_field() }}
         <!--tag-->
         <div class="form-group @if(!empty($errors->first('name'))) has-error @endif">
             @foreach ($tags as $tag)
+<<<<<<< HEAD
             <label class="label-checkbox">
                 <input type="checkbox" name="tags" value="{{ $tag->id }}">
                 <span class="lever">{{ $tag->name }}</span>
             </label>
             <!--<input class=”top_title” name=”title” type=”text” value=”WinRoad徒然草“>-->
+=======
+            {!! Form::label('tags[]','選択') !!}
+            {!! Form::checkbox('tags[]',$tag->id, null ) !!}{{ $tag->name }}
+            <!--<input type="checkbox" name="tags" value="{{ $tag->id }}">{{ $tag->name }}-->
+>>>>>>> 887fa8c4d1ebe5d15e245b4dff139fd5eead9c3e
             <span class="help-block">{{$errors->first('name')}}</span>
             @endforeach
         </div>
@@ -31,6 +38,7 @@
             <!--textarea追加りな-->
             <span class="help-block">{{$errors->first('body')}}</span>
         </div>
+<<<<<<< HEAD
         {!! Form::submit('ヒマ', ['class' => 'btn btn-warning btn-lg']) !!}
     </form>
         @foreach ($posts as $post)
@@ -41,10 +49,25 @@
         <p>内容: {{ $post->body }}</p>
          <p>投稿時間: {{ $post->created_at }}</p>
             
+=======
+        
+        <button>ヒマ</button>
+    {{Form::close()}}
+    
+    @foreach ($posts as $post)
+>>>>>>> 887fa8c4d1ebe5d15e245b4dff139fd5eead9c3e
                 <?php 
                 $user_id = $post->tags()->get()[0]->pivot->user_id;
                // echo App\User::find($user_id)->name;
                 ?>
+        <p>id: {!! link_to_route('hiima.show', $post->id, ['id' => $user_id]) !!}</p>
+        <p>ユーザー名: {!! link_to_route('users.show', $userIdFromPostId[''.$post->id]??'', ['id' => $user_id]) !!}</p> <!--追加したよ。ばなな-->
+        <p>カテゴリー: @foreach ($post->tags as $tag) {{ $tag->name }} @endforeach </p>
+        <p>内容: {{ $post->body }}</p>
+        <!--<p> {!! link_to_route('users.show', $post->body, ['id' => $post]) !!}</p>-->
+         <p>投稿時間: {{ $post->created_at }}</p>
+            <div>
+
                 @if (Auth::user()->id == $user_id)
                     {!! Form::open(['route' => ['hiima.destroy', $post->id], 'method' => 'delete']) !!}
                     
