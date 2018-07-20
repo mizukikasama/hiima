@@ -33,10 +33,11 @@
                 $user_id = $post->tags()->get()[0]->pivot->user_id;
                // echo App\User::find($user_id)->name;
                 ?>
-        <!--<li>{!! link_to_route('users.show', $userIdFromPostId[''.$post->id]??'', ['id' => Auth::id()]) !!}</li>-->
+        <p>id: {!! link_to_route('hiima.show', $post->id, ['id' => $user_id]) !!}</p>
         <p>ユーザー名: {!! link_to_route('users.show', $userIdFromPostId[''.$post->id]??'', ['id' => $user_id]) !!}</p> <!--追加したよ。ばなな-->
         <p>カテゴリー: @foreach ($post->tags as $tag) {{ $tag->name }} @endforeach </p>
         <p>内容: {{ $post->body }}</p>
+        <!--<p> {!! link_to_route('users.show', $post->body, ['id' => $post]) !!}</p>-->
          <p>投稿時間: {{ $post->created_at }}</p>
             <div>
 

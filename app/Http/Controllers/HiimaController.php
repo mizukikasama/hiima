@@ -21,7 +21,9 @@ class HiimaController extends Controller
     public function index()
         {
         $data = [];
-        
+            if(false == \Auth::check()){
+        return redirect('/');
+    }
         if (\Auth::check()) {
             $user = \Auth::user();
         }
@@ -55,7 +57,7 @@ class HiimaController extends Controller
 //        return view('hiima.index');
     }
     
-    public function store(Request $request)
+        public function store(Request $request)
         {/*
         $result=Tag::create(
             [\Form::text("tags","{{ $tag->id }}",['class'=>""])]);
