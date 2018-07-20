@@ -113,10 +113,12 @@ class HiimaController extends Controller
                 $user = \Auth::user();
                 $post = Post::find($id);
                 $tags = $post->tags()->get();//[0]->pivot->tag_id;
+                $user_id = $post->users()->get();
                // if($post->tags()->get()[0]->pivot->user_id == $user->id) {
                     return view('hiima.show', [
                         'post' => $post,
-                        'tags' => $tags
+                        'tags' => $tags,
+                        'user_id' => $user_id
                     ]);
               //  } else {
               //      return redirect('/home');
