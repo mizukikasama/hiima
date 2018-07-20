@@ -2,6 +2,13 @@
 @extends('layouts.app')
 
 @section('content')
+<!doctype html> 
+<link rel="stylesheet" href="{{ secure_asset('css/hiima.css') }}">
+<p class= "pagetop">
+    <a href="#top" title="ページトップへ戻る">
+    <img src="css/hiima.logo.png"/>
+    </a>
+</p>
     <div class="row">
         <aside class="col-xs-4">
             <div class="panel panel-default">
@@ -24,7 +31,7 @@
                
                 <li role="presentation" class="{{ Request::is('users/*/followings') ? 'active' : '' }}"><a href="{{ route('users.followings', ['id' => $user->id]) }}">Followings <span class="badge">{{ $count_followings }}</span></a></li>
                 <li role="presentation" class="{{ Request::is('users/*/followers') ? 'active' : '' }}"><a href="{{ route('users.followers', ['id' => $user->id]) }}">Followers <span class="badge">{{ $count_followers }}</span></a></li>
-                <!--<li><a href="#">Followings</a></li>-->
+                <!--<li><a href="#">Followers< /a></li>-->
                 <!--<li><a href="#">Followers< /a></li>-->
             </ul>
         </div>

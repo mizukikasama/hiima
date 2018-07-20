@@ -204,3 +204,9 @@ h1, h5, p{
 {
     opacity: 0.85 ;
 }
+
+.badge
+{
+    background-color: orange;
+    font-size: 15px;
+}
