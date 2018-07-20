@@ -1,8 +1,10 @@
+<link rel="stylesheet" href="{{ secure_asset('css/register_login.css') }}">
+   
 @extends('layouts.app')
 
 @section('content')
     <div class="text-center">
-        <h1>アカウント作成</h1>
+        <h1>Sign Up</h1>
     </div>
 
     <div class="row">
@@ -10,7 +12,7 @@
 
             {!! Form::open(['route' => 'signup.post']) !!}
                 <div class="form-group">
-                    {!! Form::label('nickname', 'ニックネーム') !!}
+                    {!! Form::label('nickname', 'Nickname') !!}
                     {!! Form::text('nickname', null, ['class' => 'form-control' ,'placeholder' => '例: ばなな']) !!}
                     <br>
                         <!--<p>例: ばなな</p>-->
@@ -18,7 +20,7 @@
                 </div>
                 
                  <div class="form-group">
-                    {!! Form::label('hiima_id', 'アカウント名') !!}
+                    {!! Form::label('hiima_id', 'User ID') !!}
                     {!! Form::text('hiima_id', null, ['class' => 'form-control' ,'placeholder' => '例: @nana7e ※@以降から入力してください']) !!}
                     <br>
                         <!--<p>例: nana7e</p>-->
@@ -27,7 +29,7 @@
                 
 
                 <div class="form-group">
-                    {!! Form::label('password', 'パスワード') !!}
+                    {!! Form::label('password', 'Password') !!}
                     {!! Form::password('password', ['class' => 'form-control' ,'placeholder' => '半角英数字を6文字以上入力してください']) !!}
                     <br>
                         <!--<p>6文字以上入力してください</p>-->
@@ -35,7 +37,7 @@
                 </div>
 
                 <div class="form-group">
-                    {!! Form::label('password_confirmation', 'パスワード確認用') !!}
+                    {!! Form::label('password_confirmation', 'Confirmation') !!}
                     {!! Form::password('password_confirmation',['class' => 'form-control' ,'placeholder' => '確認のためもう一度入力してください']) !!}
                         <br>
                         <!--<p>確認のためもう一度入力してください</p>-->
