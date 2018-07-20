@@ -21,7 +21,7 @@
                 
                  <div class="form-group">
                     {!! Form::label('hiima_id', 'User ID') !!}
-                    {!! Form::text('hiima_id', null, ['class' => 'form-control' ,'placeholder' => '例: @nana7e ※@以降から入力してください']) !!}
+                    {!! Form::text('hiima_id', null, ['class' => 'form-control' ,'placeholder' => '例: nana7e']) !!}
                     <br>
                         <!--<p>例: nana7e</p>-->
                     <!--{!! Form::text('hiima_id', old('hiima_id'), ['class' => 'form-control']) !!}-->
