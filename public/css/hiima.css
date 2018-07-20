@@ -1,0 +1,49 @@
+/* aタグ */
+#page_top, #page_down {
+    position:fixed;
+    right:15px;
+    background:#f2f2f2;
+    padding:14px 10px;
+    border:1px solid #222;
+    z-index:3;
+}
+ 
+#page_top {
+    bottom:70px;
+}
+ 
+#page_down {
+    bottom:15px;
+}
+ 
+#page_top:hover, #page_down:hover {
+    border:1px solid #e41858;
+}
+ 
+/* spanタグ */
+#page_top span, #page_down span {
+    display:block;
+    height:16px;
+    width:24px;
+    -webkit-transition:0.3s;
+    -moz-transition:0.3s;
+    -o-transition:0.3s;
+    transition:0.3s;
+}
+ 
+#page_top span {
+    background:url(http://inosh.jp/wp-content/themes/keni61_wp_corp_140111/images_my/p_top.png) no-repeat top;
+}
+ 
+#page_down span {
+    background:url(http://inosh.jp/wp-content/themes/keni61_wp_corp_140111/images_my/p_down.png) no-repeat bottom;
+}
+ 
+#page_top:hover span {
+    background:url(http://inosh.jp/wp-content/themes/keni61_wp_corp_140111/images_my/p_top.png) no-repeat bottom;
+}
+ 
+#page_down:hover span{
+    background:url(http://inosh.jp/wp-content/themes/keni61_wp_corp_140111/images_my/p_down.png) no-repeat top;
+}
+ 

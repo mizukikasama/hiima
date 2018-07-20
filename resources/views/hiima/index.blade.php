@@ -4,6 +4,7 @@
 <!doctype html><!--エラー追加したよ。りさ-->
 <h1>今日何したい？</h1>
 <h2>場所を選択してね</h2>
+
    {{$errorMessage}}
     <form method="post">
         {{ csrf_field() }}
@@ -54,5 +55,11 @@
          
 
 @endsection
+
+<p class= "pagetop">
+    <a href="#header" title="ページトップへ戻る">
+    <img src="hiima.jpg" alt"▲PAGE TOP" />
+    </a>
+</p>
 
 
