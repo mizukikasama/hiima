@@ -1,3 +1,11 @@
+<!doctype html> 
+<link rel="stylesheet" href="{{ secure_asset('css/hiima.css') }}">
+<p class= "pagetop">
+    <a href="#top" title="ページトップへ戻る">
+    <img src="css/hiima.logo.png"/>
+    </a>
+</p>
+
 <!--全替えリナ-->
   <link rel="stylesheet" href="{{ secure_asset('css/icon.css') }}">
 @if (count($users) > 0)

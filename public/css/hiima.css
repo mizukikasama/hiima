@@ -205,6 +205,13 @@ h1, h5, p{
     opacity: 0.85 ;
 }
 
+<<<<<<< HEAD
 .btn{
      font-family: 'Amatic SC', cursive;
+=======
+.badge
+{
+    background-color: orange;
+    font-size: 15px;
+>>>>>>> b652f057736ff0925b06f350ad9cd5531a243449
 }
