@@ -20,27 +20,30 @@ class HiimaController extends Controller
      */
     public function index()
         {
-        $data = [];
-            if(false == \Auth::check()){
-        return redirect('/');
-    }
-        if (\Auth::check()) {
-            $user = \Auth::user();
-        }
-            // $microposts = $user->feed_microposts()->orderBy('created_at', 'desc')->paginate(10);
-
-        //     $data = [
-        //         'user' => $user,
-        //         'microposts' => $microposts,
-        //     ];
-        // }
-        
-        //post tag いい感じにジョインしてると思われる
-        $vs = User::join('post_tag', 'users.id', '=', 'post_tag.user_id')->get();
+            $data = [];
+                if(false == \Auth::check())
+                    {
+                        return redirect('/');
+                    }
+                if (\Auth::check()) 
+                    {
+                        $user = \Auth::user();
+                    }
+                    
+                // $microposts = $user->feed_microposts()->orderBy('created_at', 'desc')->paginate(10);
     
-        $userIdFromPostId = array();
-        foreach($vs as $v) {
-            $userIdFromPostId["".$v->post_id] = $v->nickname;
+            //     $data = [
+            //         'user' => $user,
+            //         'microposts' => $microposts,
+            //     ];
+            // }
+            
+            //post tag いい感じにジョインしてると思われる
+            $vs = User::join('post_tag', 'users.id', '=', 'post_tag.user_id')->get();
+        
+            $userIdFromPostId = array();
+            foreach($vs as $v) {
+                $userIdFromPostId["".$v->post_id] = $v->nickname;
         }
         
       //  var_dump($userIdFromPostId);
@@ -57,8 +60,9 @@ class HiimaController extends Controller
 //        return view('hiima.index');
     }
     
-        public function store(Request $request)
-        {/*
+    public function store(Request $request)
+        {
+        /*
         $result=Tag::create(
             [\Form::text("tags","{{ $tag->id }}",['class'=>""])]);
         $result=Post::create(
@@ -104,9 +108,24 @@ class HiimaController extends Controller
 //        return view('hiima.index',$data);
         }
     
+    public function show($id)
+        {
+                $user = \Auth::user();
+                $post = Post::find($id);
+                $tags = $post->tags()->get();//[0]->pivot->tag_id;
+               // if($post->tags()->get()[0]->pivot->user_id == $user->id) {
+                    return view('hiima.show', [
+                        'post' => $post,
+                        'tags' => $tags
+                    ]);
+              //  } else {
+              //      return redirect('/home');
+              //  }
+        }
+    
     //追加りな（削除ボタン）
     public function destroy($id) 
-    {
+        {
         $post = Post::find($id); //Postモデルに変更（Hiimaモデルなんてない）
 
         // if (\Auth::id() === $post->user_id) {
