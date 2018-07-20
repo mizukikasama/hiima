@@ -19,8 +19,6 @@ Route::get('/', function () {
     }
 });
 
-
-
 // user registration追加したよ、かほ
 Route::get('signup', 'Auth\RegisterController@showRegistrationForm')->name('signup.get');
 Route::post('signup', 'Auth\RegisterController@register')->name('signup.post');
@@ -31,6 +29,7 @@ Route::post('login', 'Auth\LoginController@login')->name('login.post');
 Route::get('logout', 'Auth\LoginController@logout')->name('logout.get');
 
 
+//hiima関連
 Route::get('/home', 'HiimaController@index');
 /*
 //上をコメントアウト、この下足したよ。みづき
@@ -39,15 +38,13 @@ Route::get('/home', function () {
 });
 */
 
-
-//hiima関連
 Route::post('/home', 'HiimaController@store')->name('hiima.store');
 Route::delete('/home/{id}', 'HiimaController@destroy')->name('hiima.destroy');
 // laravelの引数を指定するときの書き方/home/{id}で$idを設定している
 
 //hiima詳細
 Route::view('show','hiima.show')->name('hiima.show');
-// ストアに送りたい？Route::post('hiima.show', 'HiimaController@store')->name('hiima.store');
+Route::resource('hiima','HiimaController');
 
 /*
 Route::post('/home', function () {
