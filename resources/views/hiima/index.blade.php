@@ -1,22 +1,15 @@
 @extends('layouts.app')
 @section('content')<!--以下追加したよ。かほ-->
 
-<<<<<<< HEAD
-<!doctype html><!--エラー追加したよ。りさ-->
-<h1>今日何したい？</h1>
-<h2>場所を選択してね</h2>
-
-=======
 <!doctype html> <!--エラー追加したよ。りさ-->
 <link rel="stylesheet" href="{{ secure_asset('css/hiima.css') }}">
 <p class= "pagetop">
     <a href="#top" title="ページトップへ戻る">
-    <img src="css/hiimafinal.jpg"/>
+    <img src="css/hiima.logo.png"/>
     </a>
 </p>
 <h1 id="top">まずは自分のヒマを提供しよう！</h1>
 <h5>場所を選択してね</h5>
->>>>>>> 345eac6544a3a14a3af967b6b75bdf84b675ce45
    {{$errorMessage}}
    {{Form::open(['route'=>'hiima.store'])}}
     <!--<form method="post" action=hiima.store>-->
@@ -49,7 +42,7 @@
                 $user_id = $post->tags()->get()[0]->pivot->user_id;
                // echo App\User::find($user_id)->name;
                 ?>
-        <p>id: {!! link_to_route('hiima.show', $post->id, ['id' => $post->id]) !!}</p>
+        <p>id: {!! link_to_route('hiima.show', $post->id, ['id' => $user_id]) !!}</p>
         <p>ユーザー名: {!! link_to_route('users.show', $userIdFromPostId[''.$post->id]??'', ['id' => $user_id]) !!}</p> <!--追加したよ。ばなな-->
         <p>カテゴリー: @foreach ($post->tags as $tag) {{ $tag->name }} @endforeach </p>
         <p>内容: {{ $post->body }}</p>
@@ -69,14 +62,3 @@
     </div>
     @endforeach
 @endsection
-<<<<<<< HEAD
-
-<p class= "pagetop">
-    <a href="#header" title="ページトップへ戻る">
-    <img src="hiima.jpg" alt"▲PAGE TOP" />
-    </a>
-</p>
-
-
-=======
->>>>>>> 345eac6544a3a14a3af967b6b75bdf84b675ce45
