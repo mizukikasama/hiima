@@ -1,5 +1,5 @@
 body{
-    background-image: url("background_image.jpg");
+    background-image: url("background_image.png");
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -22,22 +22,22 @@ body{
     
     position: relative;
     padding: 0.25em 1em;
-    border-top: solid 2px black;
-    border-bottom: solid 2px black;
+    /*border-top: solid 2px black;*/
+    /*border-bottom: solid 2px black;*/
 }
 
-.text-center h1:before, h1:after{
-    content: '';
-    position: absolute;    
-    top: -7px;
-    width: 2px;
+/*.text-center h1:before, h1:after{*/
+/*    content: '';*/
+/*    position: absolute;    */
+/*    top: -7px;*/
+/*    width: 2px;*/
     /*height: -webkit-calc(100% + 14px);*/
-    height: calc(100% + 14px);
-    background-color: black;
-}
+/*    height: calc(100% + 14px);*/
+/*    background-color: black;*/
+/*}*/
 
-.text-center h1:before {left: 7px;}
-.text-center h1:after {right: 7px;}
+/*.text-center h1:before {left: 7px;}*/
+/*.text-center h1:after {right: 7px;}*/
 
 
 
@@ -151,7 +151,7 @@ body{
 .title-logo img{
     width: 500px;
     height: 250px;
-    margin-top: 150px;
+    margin-top: 50px;
     animation: float_6510 3s linear infinite;
     transform-origin: 50% 50%;
 }

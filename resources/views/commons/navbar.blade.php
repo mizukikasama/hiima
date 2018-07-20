@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="{{ secure_asset('css/navbar.css') }}">
+
 <header>
     <nav class="navbar navbar-default navbar-static-top">
         <div class="container">

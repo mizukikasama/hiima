@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="{{ secure_asset('css/welcome.css') }}">
 @extends('layouts.app')<!--auth check をつけたよ　（りさ）-->
 
 @section('content')
