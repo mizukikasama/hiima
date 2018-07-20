@@ -40,12 +40,14 @@ Route::get('/home', function () {
 */
 
 
+//hiima関連
 Route::post('/home', 'HiimaController@store')->name('hiima.store');
-
 Route::delete('/home/{id}', 'HiimaController@destroy')->name('hiima.destroy');
 // laravelの引数を指定するときの書き方/home/{id}で$idを設定している
 
-
+//hiima詳細
+Route::view('show','hiima.show')->name('hiima.show');
+// ストアに送りたい？Route::post('hiima.show', 'HiimaController@store')->name('hiima.store');
 
 /*
 Route::post('/home', function () {
@@ -57,6 +59,8 @@ Route::post('/home', function () {
     return redirect('/home');
 });
 */
+
+//はじめての方へ関連
 Route::view('hajimete1','hajimete.hajimete1')->name('hajimete.hajimete1');
 
 Route::view('hajimete2','hajimete.hajimete2')->name('hajimete.hajimete2');
@@ -82,3 +86,4 @@ Route::group(['middleware' => 'auth'], function () {
         
     });
 });
+
