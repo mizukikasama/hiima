@@ -39,7 +39,7 @@
      
                 <img class="media-object img-rounded img-responsive" src="{{ asset(App\User::image_map($user->id))}}" alt="" style='width:100px;'>
       </div>
-        <div style="display:inline-block;">
+        <div style="display:inline-block; margin-top:30px;">
       
         <p>ユーザー名: {{App\User::find($h->user_id)->nickname}}</p> <!--追加したよ。ばなな-->
         <p>カテゴリー:  {{App\Tag::find($h->tag_id)->name}} </p>
