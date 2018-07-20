@@ -8,6 +8,38 @@ body{
     
 }
 
+.center jumbotron{
+    background-color: rgba(255,0,0,0.5);
+    
+}
+
+.text-center h1{
+    font-family: 'Amatic SC', cursive;
+    font-weight: 900;
+    margin-top: 0;
+    font-size: 90px;
+    
+    
+    position: relative;
+    padding: 0.25em 1em;
+    border-top: solid 2px black;
+    border-bottom: solid 2px black;
+}
+
+.text-center h1:before, h1:after{
+    content: '';
+    position: absolute;    
+    top: -7px;
+    width: 2px;
+    /*height: -webkit-calc(100% + 14px);*/
+    height: calc(100% + 14px);
+    background-color: black;
+}
+
+.text-center h1:before {left: 7px;}
+.text-center h1:after {right: 7px;}
+
+
 
 /**************************
   DEFAULT BOOTSTRAP STYLES
