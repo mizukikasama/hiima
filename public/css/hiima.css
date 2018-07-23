@@ -219,3 +219,8 @@ h1, h5, p{
      font-family: 'Amatic SC', cursive;
      font-size: 15px;
 }
+
+.nextbtn {
+    
+    text-align: center
+}

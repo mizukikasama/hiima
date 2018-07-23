@@ -23,6 +23,9 @@
             @include('commons.error_messages')
 
             @yield('content')
+            
+            
         </div>
+        
     </body>
 </html>

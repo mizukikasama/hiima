@@ -1,4 +1,3 @@
-
 <!--ここにあきが作った画像をはりつける-->
 @extends('layouts.app')
 @section('content')
@@ -10,4 +9,4 @@
 
 {!! link_to_route('hajimete.hajimete3', 'next', '',  ['class' => 'button']) !!}
 
-@endsection
+@endsectio
