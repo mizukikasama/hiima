@@ -8,7 +8,7 @@
     @else
         <div class="text-center">
                 <p class="title-logo"><img src="image/titlelogo.png"></p>
-                <p class="hiima-kun"><a href="{{Route('signup.get')}}"><img src="image/hiima.logo.png" alt="今すぐ始める"></a></p>
+                <p class="hiima-kun"><a href="{{Route('signup.get')}}"><img src="image/hiima.logo.png" alt=""></a></p>
         </div>
         
         
