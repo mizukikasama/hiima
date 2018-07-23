@@ -1,5 +1,5 @@
 <!doctype html> 
-<link rel="stylesheet" href="{{ secure_asset('css/hiima.css') }}">
+<link rel="stylesheet" href="{{ secure_asset('css/users.css') }}">
 <p class= "pagetop">
     <a href="#top" title="ページトップへ戻る">
     <img src="css/hiima.logo.png"/>
@@ -17,6 +17,7 @@
          <img class="media-left media-object img-rounded" src="{{ asset(App\User::image_map($user->id))}}" alt="" >
               
         </div>
+        
         <div class="media-body">
             <div>
                 {{ $user->nickname }}

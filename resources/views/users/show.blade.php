@@ -3,7 +3,7 @@
 
 @section('content')
 <!doctype html> 
-<link rel="stylesheet" href="{{ secure_asset('css/hiima.css') }}">
+<link rel="stylesheet" href="{{ secure_asset('css/show.css') }}">
 <p class= "pagetop">
     <a href="#top" title="ページトップへ戻る">
     <img src="css/hiima.logo.png"/>
@@ -20,6 +20,15 @@
                 <img class="media-object img-rounded img-responsive" src="{{ asset(App\User::image_map($user->id))}}" alt="">
                 </div>
             </div>
+                    <!--body plaeholder追加、かほ-->
+        <div class="form-group @if(!empty($errors->first('body'))) has-error @endif">
+            <textarea input type="textarea" placeholder="コメント" name="body" value="{{old('name')}}" class="form-control"></textarea> 
+            <!--textarea追加かほ-->
+            <span class="help-block">{{$errors->first('body')}}</span>
+        </div>
+        {!! Form::submit('編集', ['class' => 'btn btn-warning btn-lg']) !!}
+    <!--</form>-->
+    {{Form::close()}}
             @include('user_follow.follow_button', ['user' => $user])
         </aside>
         <div class="col-xs-8">
