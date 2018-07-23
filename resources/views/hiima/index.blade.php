@@ -42,12 +42,12 @@
                 $user_id = $post->tags()->get()[0]->pivot->user_id;
                // echo App\User::find($user_id)->name;
                 ?>
-        <p>id: {!! link_to_route('hiima.show', $post->id, ['id' => $post->id]) !!}</p>
-        <p>ユーザー名: {!! link_to_route('users.show', $userIdFromPostId[''.$post->id]??'', ['id' => $user_id]) !!}</p> <!--追加したよ。ばなな-->
-        <p>カテゴリー: @foreach ($post->tags as $tag) {{ $tag->name }} @endforeach </p>
-        <p>内容: {{ $post->body }}</p>
+        <!--ここはリナが変えているのでリナの使う <p>: {!! link_to_route('hiima.show', $post->id, ['id' => $post->id]) !!}</p>-->
+        <p><span class="glyphicon glyphicon-user" aria-hidden="true"></span> : {!! link_to_route('users.show', $userIdFromPostId[''.$post->id]??'', ['id' => $user_id]) !!}</p> <!--追加したよ。ばなな-->
+        <p><span class="glyphicon glyphicon-tags" aria-hidden="true"></span> : @foreach ($post->tags as $tag) {{ $tag->name }} @endforeach </p>
+        <p><span class="glyphicon glyphicon-heart" aria-hidden="true"></span> : {{ $post->body }}</p>
         <!--<p> {!! link_to_route('users.show', $post->body, ['id' => $post]) !!}</p>-->
-         <p>投稿時間: {{ $post->created_at }}</p>
+        <p><span class="glyphicon glyphicon-time" aria-hidden="true"></span> : {{ $post->created_at }}</p>
             <div>
 
                 @if (Auth::user()->id == $user_id)
@@ -55,7 +55,7 @@
                     
                      <!--{{ Form::hidden('invisible',$post->id)}}-->
                     
-                        {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-xs']) !!}
+                       {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-xs']) !!}
                     {!! Form::close() !!}
                 @endif
             </div>
