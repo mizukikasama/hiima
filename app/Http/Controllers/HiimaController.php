@@ -20,25 +20,30 @@ class HiimaController extends Controller
      */
     public function index()
         {
-        $data = [];
-        
-        if (\Auth::check()) {
-            $user = \Auth::user();
-        }
-            // $microposts = $user->feed_microposts()->orderBy('created_at', 'desc')->paginate(10);
-
-        //     $data = [
-        //         'user' => $user,
-        //         'microposts' => $microposts,
-        //     ];
-        // }
-        
-        //post tag いい感じにジョインしてると思われる
-        $vs = User::join('post_tag', 'users.id', '=', 'post_tag.user_id')->get();
+            $data = [];
+                if(false == \Auth::check())
+                    {
+                        return redirect('/');
+                    }
+                if (\Auth::check()) 
+                    {
+                        $user = \Auth::user();
+                    }
+                    
+                // $microposts = $user->feed_microposts()->orderBy('created_at', 'desc')->paginate(10);
     
-        $userIdFromPostId = array();
-        foreach($vs as $v) {
-            $userIdFromPostId["".$v->post_id] = $v->nickname;
+            //     $data = [
+            //         'user' => $user,
+            //         'microposts' => $microposts,
+            //     ];
+            // }
+            
+            //post tag いい感じにジョインしてると思われる
+            $vs = User::join('post_tag', 'users.id', '=', 'post_tag.user_id')->get();
+        
+            $userIdFromPostId = array();
+            foreach($vs as $v) {
+                $userIdFromPostId["".$v->post_id] = $v->nickname;
         }
         
       //  var_dump($userIdFromPostId);
@@ -56,24 +61,27 @@ class HiimaController extends Controller
     }
     
     public function store(Request $request)
-        {/*
+        {
+        /*
         $result=Tag::create(
             [\Form::text("tags","{{ $tag->id }}",['class'=>""])]);
         $result=Post::create(
             [\Form::text("body","{{old('name')}}",['class'=>"form-control"])
             ]);*/
-        
         $errorMessage = '';
         if(empty($_POST['body']??'') || empty($_POST['tags']??'')) {
             $errorMessage =  '必須項目です。';
         } else {
-            $datap = new Post;
-         //   $datat = new Tag;
-            $datap->body = $request->body;
-        //    $datat->name = $request->tag;
-            $datap->save();
-         // insert into `post_tag` (`post_id`, `tag_id`) values (5, 1
-           $datap->tags()->attach($request->tags,['user_id' => \Auth::user()->id]);  
+            // foreach($request->tags as $tag)
+                // {
+                    $datap = new Post;
+                 //   $datat = new Tag;
+                    $datap->body = $request->body;
+                //    $datat->name = $request->tag;
+                    $datap->save();
+                 // insert into `post_tag` (`post_id`, `tag_id`) values (5, 1
+                    $datap->tags()->attach($request->tags,['user_id' => \Auth::user()->id]);
+                // }
         }
 
 
@@ -100,9 +108,26 @@ class HiimaController extends Controller
 //        return view('hiima.index',$data);
         }
     
+    public function show($id)
+        {
+                $user = \Auth::user();
+                $post = Post::find($id);
+                $tags = $post->tags()->get();//[0]->pivot->tag_id;
+                $user_id = $post->users()->get();
+               // if($post->tags()->get()[0]->pivot->user_id == $user->id) {
+                    return view('hiima.show', [
+                        'post' => $post,
+                        'tags' => $tags,
+                        'user_id' => $user_id
+                    ]);
+              //  } else {
+              //      return redirect('/home');
+              //  }
+        }
+    
     //追加りな（削除ボタン）
     public function destroy($id) 
-    {
+        {
         $post = Post::find($id); //Postモデルに変更（Hiimaモデルなんてない）
 
         // if (\Auth::id() === $post->user_id) {
@@ -119,6 +144,33 @@ class HiimaController extends Controller
         
         return redirect("/home");
     }
+ 
+    
+    //なんだろうこれ
+    
+    //     private $CHOICE_WEIGHT = ["選択肢１" => "1",
+    //         "選択肢２" => "2",
+    //         "選択肢３" => "4"];
+ 
+    // public function getChoiceAttribute($value){
+    //     //合計値であるDBの値を要素に分解してモデルで利用する
+    //     $c = [];
+    //     foreach($this->CHOICE_WEIGHT as $key => $cn){
+    //         if(($this->CHOICE_WEIGHT[$key] & $value) > 0){
+    //             $c[] = $this->CHOICE_WEIGHT[$key];
+    //         }
+    //     }
+    //     return $c;     
+    // }
+    // public function setChoiceAttribute($value){
+    //     //DB格納時は要素の合計値をDBに設定する
+    //     $all = 0;
+    //     foreach($value as $c){
+    //         $all += $c;
+    //     }
+    //     $this->attributes["choice"]=$all;
+    // }
+
     
 }
 

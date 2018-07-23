@@ -18,13 +18,15 @@ class UsersController extends Controller
     }
     
     
+  
+    
     public function show($id) 
     {
         $user = User::find($id);
         // $posts = $user->posts()->orderBy('created_at', 'desc')->paginate(10); //いくつ表示させるかを変更（りな）
-
         $data = [
             'user' => $user,
+            'histories' => $user->feed_histories()
         //     'posts' => $posts, //microposts→postsに変更そしてコメントアウト（りな）
         ];
 
@@ -32,6 +34,12 @@ class UsersController extends Controller
 
         return view('users.show', $data);
     }
+    
+    
+    
+    
+    
+    
     
     // 以下追加（りな）
     
