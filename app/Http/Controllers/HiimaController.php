@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Post;
 use App\Tag;
 use App\User;
+use App\Category;
 use App\Http\Requests\Formrequest;
 use Illuminate\Support\Facades\DB;
 
@@ -53,7 +54,8 @@ class HiimaController extends Controller
             'errorMessage' => $_GET['errorMessage']??'',
             'posts' => Post::orderBy('created_at', 'desc')->get(), //ここいじると表示順が変わるよ。ばなな
             'userIdFromPostId' => $userIdFromPostId,
-            'users' => User::all(), 'tags' => Tag::all()]);
+            'users' => User::all(), 'tags' => Tag::all(), 'categories'=> Category::all()]);
+            
 
         //users足したよ。ばなな
         
@@ -77,10 +79,12 @@ class HiimaController extends Controller
                     $datap = new Post;
                  //   $datat = new Tag;
                     $datap->body = $request->body;
+                    $datap->category_id= $request->categories[0];
                 //    $datat->name = $request->tag;
                     $datap->save();
                  // insert into `post_tag` (`post_id`, `tag_id`) values (5, 1
                     $datap->tags()->attach($request->tags,['user_id' => \Auth::user()->id]);
+                    
                 // }
         }
 
