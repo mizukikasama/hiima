@@ -37,6 +37,7 @@ class HiimaController extends Controller
                 'posts' => Post::orderBy('created_at', 'desc')->get(), //ここいじると表示順が変わるよ。ばなな
                 'users' => User::all(), 'tags' => Tag::all(), 'categories'=> Category::all()]);
 
+
         //users足したよ。ばなな
         
 //        return view('hiima.index');
