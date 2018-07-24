@@ -4,11 +4,7 @@
 @section('content')
 
 <!doctype html> 
-<link rel="stylesheet" href="{{ secure_asset('css/hiima.css') }}">
-<p class= "pagetop">
-    <a href="#top" title="ページトップへ戻る">
-    <img src="css/hiima.logo.png"/>
-    </a>
+<link rel="stylesheet" href="{{ secure_asset('css/show.css') }}">
 </p>
 
     <div class="row">
@@ -32,9 +28,9 @@
                 <!--足したよあき-->
                 
                 
-                <li role="presentation" class="{{ Request::is('users/' . $user->id) ? 'active' : '' }} badge"><a href="{{ route('users.show', ['id' => $user->id]) }}">History {{ $count_histories }}</a></li>
-                <li role="presentation" class="{{ Request::is('users/*/followings') ? 'active' : '' }} badge"><a href="{{ route('users.followings', ['id' => $user->id]) }}">Followings {{ $count_followings }}</a></li>
-                <li role="presentation" class="{{ Request::is('users/*/followers') ? 'active' : '' }} badge"><a href="{{ route('users.followers', ['id' => $user->id]) }}">Followers {{ $count_followers }}</a></li>
+                <li role="presentation" class="{{ Request::is('users/' . $user->id) ? 'active' : '' }} "><a href="{{ route('users.show', ['id' => $user->id]) }}">History<span class="badge"> {{ $count_histories }}</span></a></li>
+                <li role="presentation" class="{{ Request::is('users/*/followings') ? 'active' : '' }} "><a href="{{ route('users.followings', ['id' => $user->id]) }}">Followings <span class="badge">{{ $count_followings }}</span></a></li>
+                <li role="presentation" class="{{ Request::is('users/*/followers') ? 'active' : '' }} "><a href="{{ route('users.followers', ['id' => $user->id]) }}">Followers <span class="badge">{{ $count_followers }}</span></a></li>
             </ul>
         </div>
         
