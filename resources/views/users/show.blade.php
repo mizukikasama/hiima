@@ -2,6 +2,16 @@
 @extends('layouts.app')
 
 @section('content')
+<<<<<<< HEAD
+<!doctype html> 
+<link rel="stylesheet" href="{{ secure_asset('css/hiima.css') }}">
+<p class= "pagetop">
+    <a href="#top" title="ページトップへ戻る">
+    <img src="css/hiima.logo.png"/>
+    </a>
+</p>
+=======
+>>>>>>> 9974e64af4edf52448a30f11c5f8aa1080a21586
     <div class="row">
         <aside class="col-xs-4">
             <div class="panel panel-default">

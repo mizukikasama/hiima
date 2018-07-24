@@ -26,6 +26,13 @@
             <span class="help-block">{{$errors->first('name')}}</span>
             @endforeach
         </div>
+<<<<<<< HEAD
+        
+      
+            
+            
+=======
+>>>>>>> 9974e64af4edf52448a30f11c5f8aa1080a21586
         <!--body plaeholder追加、かほ-->
         <div class="form-group @if(!empty($errors->first('body'))) has-error @endif">
             <textarea input type="textarea" placeholder="今日何したい？(例:2人でパンケーキ食べたい)" name="body" value="{{old('name')}}" class="form-control"></textarea> 
@@ -44,10 +51,35 @@
                 // $user = $post->users()->get();
                // echo App\User::find($user_id)->name;
                 ?>
+<<<<<<< HEAD
+
+        <p>
+            <img src="{{$imgPath}}" width="400px" height="300px" alt="cafe">
+        </p>
+        
+        <!--<p>詳しくは: {!! link_to_route('hiima.show', $post->id, ['id' => $post->id]) !!}</p>-->
+        <br>
+        <a href="{{Route('hiima.show', $post->id)}}"><img src="image/botton.png" width="150px" height="50px" alt="今すぐ始める"></a>
+        
+        <!--<p>ユーザー名: {!! link_to_route('users.show', $userIdFromPostId[''.$post->id]??'', ['id' => $user_id]) !!}</p> <!--追加したよ。ばなな-->
+        <!--<p>カテゴリー: @foreach ($post->tags as $tag) {{ $tag->name }} @endforeach </p>-->
+        <!--<p>内容: {{ $post->body }}</p>-->
+        
+    
+
+        <!--ここはリナが変えているのでリナの使う <p>: {!! link_to_route('hiima.show', $post->id, ['id' => $post->id]) !!}</p>-->
+        <p><span class="glyphicon glyphicon-user" aria-hidden="true"></span> : {!! link_to_route('users.show', $userIdFromPostId[''.$post->id]??'', ['id' => $user_id]) !!}</p> <!--追加したよ。ばなな-->
+        <br>
+        <p><span class="glyphicon glyphicon-tags" aria-hidden="true"></span> : @foreach ($post->tags as $tag) {{ $tag->name }} @endforeach </p>
+        <br>
+        <p><span class="glyphicon glyphicon-heart" aria-hidden="true"></span> : {{ $post->body }}</p>
+        <br>
+=======
         
         <p>ユーザー名: {!! link_to_route('users.show', $user->nickname, ['id' => $user->id]) !!}</p> <!--追加したよ。ばなな-->
         <p>カテゴリー: @foreach ($post->tags as $tag) {{ $tag->name }} @endforeach </p>
         <p>内容: {!! link_to_route('hiima.show', $post->body, ['id' => $post->id]) !!}</p>
+>>>>>>> 9974e64af4edf52448a30f11c5f8aa1080a21586
         <!--<p> {!! link_to_route('users.show', $post->body, ['id' => $post]) !!}</p>-->
          <p>投稿時間: {{ $post->created_at }}</p>
             <div>
