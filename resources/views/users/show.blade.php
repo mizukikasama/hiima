@@ -3,16 +3,12 @@
 
 @section('content')
 <!doctype html> 
-<<<<<<< HEAD
 <link rel="stylesheet" href="{{ secure_asset('css/hiima.css') }}">
 <p class= "pagetop">
     <a href="#top" title="ページトップへ戻る">
     <img src="css/hiima.logo.png"/>
     </a>
 </p>
-=======
-<link rel="stylesheet" href="{{ secure_asset('css/show.css') }}">
->>>>>>> 2818b0998470c5476bb3677eecea048e406c3749
     <div class="row">
         <aside class="col-xs-4">
             <div class="panel panel-default">

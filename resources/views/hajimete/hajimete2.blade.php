@@ -9,4 +9,4 @@
 
 {!! link_to_route('hajimete.hajimete3', 'next', '',  ['class' => 'button']) !!}
 
-@endsectio
+@endsection
