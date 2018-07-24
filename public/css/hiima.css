@@ -165,6 +165,7 @@ h1, h5, p{
     color: #6f4b3e;
     font-weight: bold;
     display: inline-block;
+    width: 30%;
     
 }
 .posts:after {
