@@ -113,7 +113,6 @@
                 $user_id = $post->tags()->get()[0]->pivot->user_id;
                // echo App\User::find($user_id)->name;
                 ?>
-<<<<<<< HEAD
         <p>
             <img src="{{$imgPath}}" width="400px" height="300px" alt="cafe">
         </p>
@@ -122,17 +121,13 @@
         
         <a href="{{Route('hiima.show', $post->id)}}"><img src="image/botton.png" width="150px" height="50px" alt="今すぐ始める"></a>
         
-        <p>ユーザー名: {!! link_to_route('users.show', $userIdFromPostId[''.$post->id]??'', ['id' => $user_id]) !!}</p> <!--追加したよ。ばなな-->
-        <p>カテゴリー: @foreach ($post->tags as $tag) {{ $tag->name }} @endforeach </p>
-        <p>内容: {{ $post->body }}</p>
+       
         
     
-=======
         <!--ここはリナが変えているのでリナの使う <p>: {!! link_to_route('hiima.show', $post->id, ['id' => $post->id]) !!}</p>-->
         <p><span class="glyphicon glyphicon-user" aria-hidden="true"></span> : {!! link_to_route('users.show', $userIdFromPostId[''.$post->id]??'', ['id' => $user_id]) !!}</p> <!--追加したよ。ばなな-->
         <p><span class="glyphicon glyphicon-tags" aria-hidden="true"></span> : @foreach ($post->tags as $tag) {{ $tag->name }} @endforeach </p>
         <p><span class="glyphicon glyphicon-heart" aria-hidden="true"></span> : {{ $post->body }}</p>
->>>>>>> 6cbe5d9c43517e975e4366a715e11fa4b76cef92
         <!--<p> {!! link_to_route('users.show', $post->body, ['id' => $post]) !!}</p>-->
         <p><span class="glyphicon glyphicon-time" aria-hidden="true"></span> : {{ $post->created_at }}</p>
             <div>

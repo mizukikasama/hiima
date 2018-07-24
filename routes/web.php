@@ -69,6 +69,9 @@ Route::view('hajimete4','hajimete.hajimete4')->name('hajimete.hajimete4');
 Route::view('hajimete5','hajimete.hajimete5')->name('hajimete.hajimete5');
 
 
+
+
+
 //linktorouteでhajimete.indexが表示されるようになる
 
 
