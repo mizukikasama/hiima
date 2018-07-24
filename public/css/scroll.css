@@ -1,3 +1,7 @@
+
+/*ばななへ　ここからスクロールの＞＞＞　のやつのCSSだよ*/
+
+
 a {
   position: absolute;
   bottom: 20px;
@@ -62,3 +66,5 @@ a span:nth-of-type(3) {
     opacity: 0;
   }
 }
+
+/*ばななへここまでだよ*/
