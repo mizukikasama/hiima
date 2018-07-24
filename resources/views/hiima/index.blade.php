@@ -46,16 +46,6 @@
            <!--</div> -->
             
         </div>
-    
-        
-            <!--        <ul>-->
-            <!--<li>cafe</li>-->
-            <!--<li>飲み</li>-->
-            <!--<li>映画</li>-->
-            <!--<li>お買い物</li>-->
-            <!--<li>たこぱ</li>-->
-            <!--</ul>-->
-            
             
         <!--body plaeholder追加、かほ-->
         <div class="form-group @if(!empty($errors->first('body'))) has-error @endif">
