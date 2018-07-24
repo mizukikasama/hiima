@@ -106,9 +106,11 @@
              $imgPath = 'image/category_pizza.jpg';
         }
         elseif($category == 14) {
+             $imgPath = 'image/category_tyuka.jpg';
+        }
+                elseif($category == 15) {
              $imgPath = 'image/category_washoku.jpg';
         }
-        
     ?>
     
     <div class ="posts">
