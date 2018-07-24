@@ -26,6 +26,7 @@
         </aside>
         <div class="col-xs-8">
             <ul class="nav nav-tabs nav-justified">
+                
             
                 <!--ここからhistory追加-->
                 <!--足したよあき-->

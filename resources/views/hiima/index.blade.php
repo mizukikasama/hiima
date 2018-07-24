@@ -59,22 +59,19 @@
                // echo App\User::find($user_id)->name;
                 ?>
 
-        <p>
-            <img src="{{$imgPath}}" width="400px" height="300px" alt="cafe">
-        </p>
-        
+
         <!--<p>詳しくは: {!! link_to_route('hiima.show', $post->id, ['id' => $post->id]) !!}</p>-->
         <br>
         <a href="{{Route('hiima.show', $post->id)}}"><img src="image/botton.png" width="150px" height="50px" alt="今すぐ始める"></a>
         
-        <p><span class="glyphicon glyphicon-user" aria-hidden="true"></span> : {!! link_to_route('users.show', $user->nickname, ['id' => $user_id]) !!}</p> <!--追加したよ。ばなな-->
+        <p><span class="glyphicon glyphicon-user" aria-hidden="true"></span> : {!! link_to_route('users.show', $user->nickname, ['id' => $post->user_id]) !!}</p> <!--追加したよ。ばなな-->
         <br>
         <p><span class="glyphicon glyphicon-tags" aria-hidden="true"></span> : @foreach ($post->tags as $tag) {{ $tag->name }} @endforeach </p>
         <br>
         <p><span class="glyphicon glyphicon-heart" aria-hidden="true"></span> :{!! link_to_route('hiima.show', $post->body, ['id' => $post->id]) !!}</p>
         <br>
         
-        <!--<p>ユーザー名: {!! link_to_route('users.show', $user->nickname, ['id' => $user->id]) !!}</p> <!--追加したよ。ばなな-->-->
+        <!--<p>ユーザー名: {!! link_to_route('users.show', $user->nickname, ['id' => $user->id]) !!}</p> <!--追加したよ。ばなな-->
         <!--<p>カテゴリー: @foreach ($post->tags as $tag) {{ $tag->name }} @endforeach </p>-->
         <!--<p>内容: {!! link_to_route('hiima.show', $post->body, ['id' => $post->id]) !!}</p>-->
         <!--<p> {!! link_to_route('users.show', $post->body, ['id' => $post]) !!}</p>-->
