@@ -4,7 +4,8 @@
 @section('content')
 
 <!doctype html> 
-<link rel="stylesheet" href="{{ secure_asset('css/hiima.css') }}">
+<link rel="stylesheet" href="{{ secure_asset('css/show.css') }}">
+<!--<link rel="stylesheet" href="{{ secure_asset('css/hiima.css') }}">-->
 <p class= "pagetop">
     <a href="#top" title="ページトップへ戻る">
     <img src="css/hiima.logo.png"/>
