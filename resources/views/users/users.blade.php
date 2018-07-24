@@ -1,9 +1,6 @@
 <!doctype html> 
-<link rel="stylesheet" href="{{ secure_asset('css/users.css') }}">
-<p class= "pagetop">
-    <a href="#top" title="ページトップへ戻る">
+<p class= "body">
     <img src="css/hiima.logo.png"/>
-    </a>
 </p>
 
 <!--全替えリナ-->

@@ -1,5 +1,6 @@
 <!--追加りな-->
 @extends('layouts.app')
+<!doctype html> 
 
 @section('content')
 <!doctype html> 
@@ -17,12 +18,13 @@
                 </div>
             </div>
   <div class="text">
-    <h2>profile</h2>
+       @include('user_follow.follow_button', ['user' => $user])
+    <h4>profile</h4>
    {{Form::open (['route' => ['users.edit', $user->id]])}}
                     <!--body plaeholder追加、かほ-->
         <div class="form-group @if(!empty($errors->first('body'))) has-error @endif">
         @if($user->id == Auth::id())
-            <textarea input type="textarea" placeholder="コメントを書いてね" name="body"
+            <textarea input type="textarea" placeholder="自己紹介" name="body"
              class="form-control">{{$user->profile}}</textarea> 
         @else
             <div> {{$user->profile}}</div> 
@@ -31,6 +33,7 @@
             <!--textarea追加かほ-->
             <span class="help-block">{{$errors->first('body')}}</span>
         </div>
+        <div class="btn"></div>
         @if($user->id == Auth::id())
         {!! Form::submit('edit', ['class' => 'btn btn-warning btn-lg']) !!}
         @endif
@@ -38,7 +41,7 @@
    </div>
     {{Form::close()}}
     
-            @include('user_follow.follow_button', ['user' => $user])
+           
         </aside>
         <div class="col-xs-8">
             <ul class="nav nav-tabs nav-justified">
