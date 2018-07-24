@@ -20,8 +20,14 @@ h1, h5, p{
   padding-top: 20px;
 }
 
-.checkbox-wrap{
+.box {
+    
 }
+
+
+/*ここから下がチェックボックス*/
+/*.checkbox-wrap{*/
+/*}*/
 .label-checkbox input[type="checkbox"]{
   display: none;
   
@@ -85,25 +91,36 @@ h1, h5, p{
    margin-left: -44px;
    border-color: #ffa500;
 }
+/*ここまでチェックボックス*/
 
-.radio-wrap{
+
+
+
+/*この下はラジオボックス*/
+/*.radio-wrap{*/
   
-}
+/*}*/
 .label-radio input[type="radio"]{
   display: none;
 }
 .label-radio{
+  float: left;
   cursor: pointer;
-  color: #828c9a;
-  font-weight: normal;
+  color: #6f4b3e;
+  font-weight: bold;
   letter-spacing: 0;
   display: inline-block;
   position: relative;
   margin-right: 20px;
+  margin-top: 10px;
 }
+.lavel .label-radio {
+    display: inline-block;
+}
+
 .label-radio .lever:before{
   content:'';
-  border: 1px solid #ddd;
+  border: 1px solid #ffa500;
   width: 20px;
   height: 20px;
   margin-right: 10px;
@@ -121,8 +138,8 @@ h1, h5, p{
 }
 .label-radio input[type="radio"]:checked + .lever:before{
   opacity: 0;
-  background: #eee;
-  border-color: #eee;
+  background: #ffa500;
+  border-color: #ffa500;
   transform:scale(2);
 }
 .label-radio .lever:after{
@@ -133,8 +150,8 @@ h1, h5, p{
   top: 0px;
   width:8px;
   height: 16px;
-  border-right: 2px solid #ddd;
-  border-bottom: 2px solid #ddd;
+  border-right: 2px solid #ffa500;
+  border-bottom: 2px solid #ffa500;
   transform:rotate(-200deg);
   -webkit-transition: all 400ms cubic-bezier(1, 0, 0, 1);
   -moz-transition: all 400ms cubic-bezier(1, 0, 0, 1);
@@ -152,10 +169,15 @@ h1, h5, p{
   top: 0px;
   width:8px;
   height: 16px;
-  border-right: 2px solid #5bc0de;
-  border-bottom: 2px solid #5bc0de;
+  border-right: 2px solid #ffa500;
+  border-bottom: 2px solid #ffa500;
   transform:rotate(40deg);
 }
+/*ここまでラジオボックス*/
+
+
+
+
 
 
 
