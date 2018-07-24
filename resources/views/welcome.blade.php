@@ -9,8 +9,11 @@
         {{ $user->name }}
     @else
     
+    <!--このしたは背景固定のやつ（りな）-->
       <main>
     <div class="cd-fixed-bg cd-bg-1">
+         <!--ここまで（りな）-->
+    
     
         <div class="text-center">
                 <p class="title-logo"><img src="image/titlelogo.png"></p>
