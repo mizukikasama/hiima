@@ -16,6 +16,7 @@
 @media (min-width: 769px) {
 #fullscreen img {
   left: 0;
+ 
 }
 /* ** */}
 
@@ -27,11 +28,19 @@
 /*  height: 100vh;*/
 /*}*/
 
+.navbar-static-top {
+    border-radius: 0;
+    margin-bottom: -20px;}
+    
+    
 .navbar-inverse {
     background-color: #222;
     border-color: #080808;
-    margin-bottom: 0;
+    margin-bottom:0;
+   
 }
+
+
 
 .button{
   display: block;

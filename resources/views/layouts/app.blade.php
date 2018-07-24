@@ -10,6 +10,8 @@
         <!-- Bootstrap -->
         <!--りなhajimete.cssへのlink rel 追加-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="shortcut icon" href="https://hiima.herokuapp.com/" type="image/hiima.favicon.png" />
+        
         <link rel="stylesheet" href="{{ secure_asset('css/hajimete.css') }}">
         <link rel="stylesheet" href="{{ secure_asset('css/icon.css') }}">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
