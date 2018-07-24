@@ -1,0 +1,12 @@
+body {
+    background-image: url("usuisora.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    color: #6f4b3e;
+}
+.text {
+    color: orange;
+    font-family: cursive;
+}

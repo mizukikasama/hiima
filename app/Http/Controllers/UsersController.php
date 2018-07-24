@@ -36,8 +36,26 @@ class UsersController extends Controller
     }
     
     
-    
-    
+// 以下追加かほ    
+    public function edit(Request $request, $id)
+    {
+        $user = \Auth::user();//User::find($id);
+        //
+        // save 
+       // $user->profile = $_POST['body'];
+    //    $usre->save();
+        return  redirect()->back();
+/*
+        $data = [
+            'user' => $user,
+            'histories' => $user->feed_histories()
+        ];
+
+         $data += $this->counts($user);
+
+        return view('users.edit', $data);
+  */     
+    }
     
     
     

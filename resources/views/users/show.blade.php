@@ -4,11 +4,7 @@
 @section('content')
 <!doctype html> 
 <link rel="stylesheet" href="{{ secure_asset('css/show.css') }}">
-<p class= "pagetop">
-    <a href="#top" title="ページトップへ戻る">
-    <img src="css/hiima.logo.png"/>
-    </a>
-</p>
+
     <div class="row">
         <aside class="col-xs-4">
             <div class="panel panel-default">
@@ -20,15 +16,20 @@
                 <img class="media-object img-rounded img-responsive" src="{{ asset(App\User::image_map($user->id))}}" alt="">
                 </div>
             </div>
+  <div class="text">
+    <h2>profile</h2>
+   {{Form::open (['route' => ['users.edit', $user->id]])}}
                     <!--body plaeholder追加、かほ-->
         <div class="form-group @if(!empty($errors->first('body'))) has-error @endif">
-            <textarea input type="textarea" placeholder="コメント" name="body" value="{{old('name')}}" class="form-control"></textarea> 
+            <textarea input type="textarea" placeholder="コメントを書いてね" name="body" value="{{old('name')}}" class="form-control"></textarea> 
             <!--textarea追加かほ-->
             <span class="help-block">{{$errors->first('body')}}</span>
         </div>
-        {!! Form::submit('編集', ['class' => 'btn btn-warning btn-lg']) !!}
+        {!! Form::submit('edit', ['class' => 'btn btn-warning btn-lg']) !!}
     <!--</form>-->
+   </div>
     {{Form::close()}}
+    
             @include('user_follow.follow_button', ['user' => $user])
         </aside>
         <div class="col-xs-8">
@@ -44,6 +45,8 @@
                 <!--<li><a href="#">Followers< /a></li>-->
             </ul>
         </div>
+       
+    
         @foreach($histories as $h)
         <!--    {{ App\User::find($h->user_id) }}-->
         <!--    {{ App\Post::find($h->post_id) }}-->
