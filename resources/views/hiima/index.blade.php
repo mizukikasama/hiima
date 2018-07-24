@@ -32,7 +32,7 @@
             <!--textarea追加りな-->
             <span class="help-block">{{$errors->first('body')}}</span>
         </div>
-        {!! Form::submit('ヒマ', ['class' => 'btn btn-warning btn-lg']) !!}
+        {!! Form::submit('ヒマ', ['class' => 'btn btn-warning btn-lg active']) !!}
     <!--</form>-->
     {{Form::close()}}
     
@@ -40,12 +40,14 @@
     <div class ="posts">
                 <?php 
                 $user_id = $post->tags()->get()[0]->pivot->user_id;
+                $user = App\User::find($post->user_id);
+                // $user = $post->users()->get();
                // echo App\User::find($user_id)->name;
                 ?>
-        <p>id: {!! link_to_route('hiima.show', $post->id, ['id' => $post->id]) !!}</p>
-        <p>ユーザー名: {!! link_to_route('users.show', $userIdFromPostId[''.$post->id]??'', ['id' => $user_id]) !!}</p> <!--追加したよ。ばなな-->
+        
+        <p>ユーザー名: {!! link_to_route('users.show', $user->nickname, ['id' => $user->id]) !!}</p> <!--追加したよ。ばなな-->
         <p>カテゴリー: @foreach ($post->tags as $tag) {{ $tag->name }} @endforeach </p>
-        <p>内容: {{ $post->body }}</p>
+        <p>内容: {!! link_to_route('hiima.show', $post->body, ['id' => $post->id]) !!}</p>
         <!--<p> {!! link_to_route('users.show', $post->body, ['id' => $post]) !!}</p>-->
          <p>投稿時間: {{ $post->created_at }}</p>
             <div>

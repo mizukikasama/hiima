@@ -13,15 +13,17 @@ class Controller extends BaseController
 
     public function counts($user) {
         // この下変更あき
-        $count_histories = count($user->feed_histories());
+        $count_histories = $user->posts()->count();
         
         $count_followings = $user->followings()->count();
         $count_followers = $user->followers()->count();
+        // $count_sankas = $user->sankas()->count();
 
         return [
             'count_histories' => $count_histories,
             'count_followings' => $count_followings,
             'count_followers' => $count_followers,
+            // 'count_sankas' => $count_sankas,
         ];
     }
 }
