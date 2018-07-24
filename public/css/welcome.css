@@ -186,48 +186,8 @@ body{
   100% { transform:scale(1) rotate(0) }
 }
 
-<<<<<<<<< saved version
-  100% { transform:scale(1) rotate(0) }
-}
 
 
-/*ここから背景固定のCSS*/
-body,html, main {
-    /* important */
-    height: 100%;
-    width: 100%;
-}
-  
-.cd-fixed-bg {
-    min-height: 100%;
-    background-size: cover;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-position: center center;
-}
-  
-.cd-fixed-bg.cd-bg-1 {
-   background-image: url("rina_himawari1.jpg");
-}
-.cd-fixed-bg.cd-bg-2 {
-  background-image: url("rina_himawari2.jpg");
-}
-.cd-fixed-bg.cd-bg-3 {
-  background-image: url("rina_himawari3.jpg");
-}
-.cd-fixed-bg.cd-bg-4 {
-  background-image: url("rina_himawari4.jpg");
-}
-  
-.cd-scrolling-bg {
-    min-height: 100%;
-}
-
-=========
-
-<<<<<<<<< saved version
-
-=========
 
 /*ここから背景固定のCSS*/
 body,html, main {
