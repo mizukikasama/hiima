@@ -12,12 +12,18 @@
             <td>{{ $post->id }}</td>
         </tr>
         <tr>
+            <th>提案者</th>
+            <td>
+               {{ $user_id[0]->nickname }}
+            </td>
+        </tr> 
+        <tr>
             <th>場所</th>
             <td>
-            @foreach($tags as $tag)
-                {{ $tag->name }}  
-            @endforeach
-        </td>
+                @foreach($tags as $tag)
+                    {{ $tag->name }}  
+                @endforeach
+            </td>
         </tr>               
         <tr>
             <th>したいこと</th>
@@ -26,14 +32,12 @@
         <tr>
             <th>参加者</th>
             <td>
-            @foreach($user_id as $user)
-                {{ $user->nickname }}  
-            @endforeach
+
             </td>
         </tr> 
     </table>
     
-    {!! link_to_route('hiima.show', '一緒にヒマをつぶそう', ['id' => $post->id], ['class' => 'btn btn-default']) !!}
+
 
     
 @endsection

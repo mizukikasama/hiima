@@ -1,0 +1,9 @@
+@if (Auth::user()->is_sanka($post_user->id))
+        {!! Form::open(['route' => ['user.unsanka', $post->id], 'method' => 'delete']) !!}
+            {!! Form::submit('やっぱりやめる', ['class' => "btn btn-success btn-xs"]) !!}
+        {!! Form::close() !!}
+    @else
+        {!! Form::open(['route' => ['user.sanaka', $post->id]]) !!}
+            {!! Form::submit('一緒にヒマをつぶす', ['class' => "btn btn-default btn-xs"]) !!}
+        {!! Form::close() !!}
+    @endif
