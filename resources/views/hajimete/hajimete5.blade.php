@@ -1,4 +1,3 @@
-
 <!--ここにあきが作った画像をはりつける-->
 @extends('layouts.app')
 @section('content')
