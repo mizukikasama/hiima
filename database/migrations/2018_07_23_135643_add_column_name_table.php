@@ -13,7 +13,7 @@ class AddColumnNameTable extends Migration
      */
     public function up()
     {
-        Schema::table('category', function (Blueprint $table) {
+        Schema::table('categories', function (Blueprint $table) {
              $table->string('name');
         });
     }
@@ -25,8 +25,5 @@ class AddColumnNameTable extends Migration
      */
     public function down()
     {
-        Schema::table('category', function (Blueprint $table) {
-             Schema::dropIfExists('category');
-        });
     }
 }

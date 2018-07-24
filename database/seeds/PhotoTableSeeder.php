@@ -16,7 +16,7 @@ class PhotoTableSeeder extends Seeder
         foreach($categories as $category){
             
         
-        DB::table('category')->insert([
+        DB::table('categories')->insert([
             
             'name'=> $category
             
