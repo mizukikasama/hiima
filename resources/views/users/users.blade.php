@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="{{ secure_asset('css/users.css') }}">
 <p class= "pagetop">
     <a href="#top" title="ページトップへ戻る">
-    <img src="css/hiima.logo.png"/>
+    <!--<img src="css/hiima.logo.png"/>-->
     </a>
 </p>
 

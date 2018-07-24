@@ -16,5 +16,9 @@ class DatabaseSeeder extends Seeder
         
         foreach ($tags as $tag) App\Tag::create(['name' => $tag]);
         //地名たくさん入れたよ。みづき
+    
+        $this->call(PhotoTableSeeder::class);
+        
     }
+    
 }
