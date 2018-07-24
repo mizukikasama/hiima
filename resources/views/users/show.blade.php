@@ -21,11 +21,19 @@
    {{Form::open (['route' => ['users.edit', $user->id]])}}
                     <!--body plaeholder追加、かほ-->
         <div class="form-group @if(!empty($errors->first('body'))) has-error @endif">
-            <textarea input type="textarea" placeholder="コメントを書いてね" name="body" value="{{old('name')}}" class="form-control"></textarea> 
+        @if($user->id == Auth::id())
+            <textarea input type="textarea" placeholder="コメントを書いてね" name="body"
+             class="form-control">{{$user->profile}}</textarea> 
+        @else
+            <div> {{$user->profile}}</div> 
+        @endif
+
             <!--textarea追加かほ-->
             <span class="help-block">{{$errors->first('body')}}</span>
         </div>
+        @if($user->id == Auth::id())
         {!! Form::submit('edit', ['class' => 'btn btn-warning btn-lg']) !!}
+        @endif
     <!--</form>-->
    </div>
     {{Form::close()}}

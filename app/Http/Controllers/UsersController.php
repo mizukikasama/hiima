@@ -42,8 +42,8 @@ class UsersController extends Controller
         $user = \Auth::user();//User::find($id);
         //
         // save 
-       // $user->profile = $_POST['body'];
-    //    $usre->save();
+        $user->profile = $_POST['body'];
+        $user->save();
         return  redirect()->back();
 /*
         $data = [
