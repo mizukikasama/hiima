@@ -30,34 +30,12 @@ class HiimaController extends Controller
                     {
                         $user = \Auth::user();
                     }
-                    
-                // $microposts = $user->feed_microposts()->orderBy('created_at', 'desc')->paginate(10);
-    
-            //     $data = [
-            //         'user' => $user,
-            //         'microposts' => $microposts,
-            //     ];
-            // }
             
-//             //post tag いい感じにジョインしてると思われる
-//             $vs = User::join('post_tag', 'users.id', '=', 'post_tag.user_id')->get();
-            
-        
-//             $userIdFromPostId = array();
-//             foreach($vs as $v) {
-//                 $userIdFromPostId["".$v->post_id] = $v->nickname;
-//         }
-        
-//       //  var_dump($userIdFromPostId);
-//     //    return;
-        // return view('hiima.index', ['posts' => Post::all(), 'users' => User::all(), 'tags' => Tag::all()]);
-
-        return view('hiima.index', [
-            'tags' => Tag::all(),
-            'errorMessage' => $_GET['errorMessage']??'',
-            'posts' => Post::orderBy('created_at', 'desc')->get(), //ここいじると表示順が変わるよ。ばなな
-            'userIdFromPostId' => $userIdFromPostId,
-            'users' => User::all(), 'tags' => Tag::all(), 'categories'=> Category::all()]);
+            return view('hiima.index', [
+                'tags' => Tag::all(),
+                'errorMessage' => $_GET['errorMessage']??'',
+                'posts' => Post::orderBy('created_at', 'desc')->get(), //ここいじると表示順が変わるよ。ばなな
+                'users' => User::all(), 'tags' => Tag::all(), 'categories'=> Category::all()]);
 
         //users足したよ。ばなな
         
