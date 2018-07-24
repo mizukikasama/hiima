@@ -113,10 +113,10 @@
         </p>
         
         <!--<p>詳しくは: {!! link_to_route('hiima.show', $post->id, ['id' => $post->id]) !!}</p>-->
-        
+        <br>
         <a href="{{Route('hiima.show', $post->id)}}"><img src="image/botton.png" width="150px" height="50px" alt="今すぐ始める"></a>
         
-        <!--<p>ユーザー名: {!! link_to_route('users.show', $userIdFromPostId[''.$post->id]??'', ['id' => $user_id]) !!}</p> <!--追加したよ。ばなな-->-->
+        <!--<p>ユーザー名: {!! link_to_route('users.show', $userIdFromPostId[''.$post->id]??'', ['id' => $user_id]) !!}</p> <!--追加したよ。ばなな-->
         <!--<p>カテゴリー: @foreach ($post->tags as $tag) {{ $tag->name }} @endforeach </p>-->
         <!--<p>内容: {{ $post->body }}</p>-->
         
@@ -124,9 +124,11 @@
 
         <!--ここはリナが変えているのでリナの使う <p>: {!! link_to_route('hiima.show', $post->id, ['id' => $post->id]) !!}</p>-->
         <p><span class="glyphicon glyphicon-user" aria-hidden="true"></span> : {!! link_to_route('users.show', $userIdFromPostId[''.$post->id]??'', ['id' => $user_id]) !!}</p> <!--追加したよ。ばなな-->
+        <br>
         <p><span class="glyphicon glyphicon-tags" aria-hidden="true"></span> : @foreach ($post->tags as $tag) {{ $tag->name }} @endforeach </p>
+        <br>
         <p><span class="glyphicon glyphicon-heart" aria-hidden="true"></span> : {{ $post->body }}</p>
-
+        <br>
         <!--<p> {!! link_to_route('users.show', $post->body, ['id' => $post]) !!}</p>-->
          <p>投稿時間: {{ $post->created_at }}</p>
             <div>
