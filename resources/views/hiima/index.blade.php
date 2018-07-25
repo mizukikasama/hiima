@@ -162,13 +162,11 @@
         <br>
         <p><span class="glyphicon glyphicon-heart" aria-hidden="true"></span> :{!! link_to_route('hiima.show', $post->body, ['id' => $post->id]) !!}</p>
         <br>
-        
-
-         <p>投稿時間: {{ $post->created_at }}</p>
+        <p><span class="glyphicon glyphicon-time" aria-hidden="true"></span> : {{ $post->created_at }}</p>
          
             <div>
 
-                @if (Auth::user()->id == $user_id)
+                @if (Auth::user()->id == $post->user_id)
                     {!! Form::open(['route' => ['hiima.destroy', $post->id], 'method' => 'delete']) !!}
                     
                      <!--{{ Form::hidden('invisible',$post->id)}}-->
