@@ -14,6 +14,7 @@
                     <h3 class="panel-title">{{ $user->nickname }}</h3>
                 </div>
                 <div class="panel-body">
+                    
                     <!--この下変更しましたりな（アイコン設定）-->
                 <img class="media-object img-rounded img-responsive" src="{{ asset(App\User::image_map($user->id))}}" alt="">
                 </div>

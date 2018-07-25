@@ -1,13 +1,13 @@
 body {
-    background-image: url("usuisora.jpg");
+    background-image: url("haikei1.himawari.jpg");
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    color: #6f4b3e;
+    color: white;
 }
 
-h1, h5 {
+h1 {
     text-align: center;
 }
 
@@ -40,7 +40,7 @@ h1, h5, p{
 }
 .label-checkbox .lever{
 　font-family: 'fantasy';
-  color: #6f4b3e;
+  color: #E5DCD1;
   font-weight: bold;
   display: inline-block;
   padding: 8px 40px;
@@ -106,7 +106,7 @@ h1, h5, p{
 .label-radio{
   float: left;
   cursor: pointer;
-  color: #6f4b3e;
+  color: #E5DCD1;
   font-weight: bold;
   letter-spacing: 0;
   display: inline-block;
@@ -291,3 +291,43 @@ img {
     width: 100%;
     height: 100%;
 }
+
+
+
+/*このしたが詳細ページの外枠だよ（りな）*/
+.sample_box3_1 {
+    position: relative;
+    padding: 1em 1.5em;
+    margin: 2em 0;
+    border: solid 10px #8FA368;/*線*/
+    border-radius: 40px;/*角の丸み*/
+    font-family: "メイリオ", sans-serif;
+    font-weight: bold;
+    color: white;/*文字*/
+}
+.sample_box3_1 .sample_box_title{
+    position: absolute;
+    display: inline-block;
+    top: -13px;
+    left: 10px;
+    padding: 0 10px;
+    line-height: 1;
+    font-size: 1.3em;/*タイトル文字サイズ*/
+    
+  
+    
+    font-family: "メイリオ", sans-serif;
+    color:white;/*タイトル文字色*/
+    font-weight: bold;
+}
+.sample_box3_1 p {
+    margin: 0; 
+    padding: 0;
+}
+
+/*このしたが箇条書きの装飾だよ（りな）*/
+
+ol {
+    list-style-type: none;
+    list-style-image: url('mini.hiima.logo.png');
+  }
