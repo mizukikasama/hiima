@@ -7,6 +7,7 @@
 <!doctype html> 
 <link rel="stylesheet" href="{{ secure_asset('css/show.css') }}">
 
+
     <div class="row">
         <aside class="col-xs-4">
             <div class="panel panel-default">
