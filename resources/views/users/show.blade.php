@@ -29,7 +29,7 @@
                             <!--body plaeholder追加、かほ-->
                 <div class="form-group @if(!empty($errors->first('body'))) has-error @endif">
                 @if($user->id == Auth::id())
-                    <textarea input type="textarea" placeholder="自己紹介" name="body"
+                    <textarea input type="textarea" placeholder="みんなに好きなことを伝えよう！" name="body"
                      class="form-control">{{$user->profile}}</textarea> 
                 @else
                     <div> {{$user->profile}}</div> 
@@ -40,7 +40,7 @@
                 </div>
                 <div class="btn"></div>
                 @if($user->id == Auth::id())
-                {!! Form::submit('edit', ['class' => 'btn btn-warning btn-lg']) !!}
+                {!! Form::submit('update', ['class' => 'btn btn-warning btn-lg']) !!}
                 @endif
             <!--</form>-->
            </div>
