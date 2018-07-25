@@ -52,9 +52,9 @@ body {
     border-bottom: 3px solid #ffff7f;
 }
 
-.nav-tabs>li.active>a:hover {
-    background-color: #ffffcc;
-}
+/*.nav-tabs>li.active>a:hover {*/
+/*    background-color: #ffffcc;*/
+/*}*/
 
 /*変更したよりな*/
 /*ひーま君の上の「りなさん」の部分*/
@@ -74,6 +74,5 @@ body {
 
 .panel-body{
    background-image: url("sougen.jpg");
-
 }
 

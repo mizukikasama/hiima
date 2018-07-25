@@ -23,6 +23,7 @@ class UsersController extends Controller
     public function show($id) 
     {   
         $user = User::find($id);
+        
         // $posts = $user->posts()->orderBy('created_at', 'desc')->paginate(10); //いくつ表示させるかを変更（りな）
         $data = [
             'user' => $user,
@@ -31,8 +32,9 @@ class UsersController extends Controller
         ];
 
          $data += $this->counts($user);
-
+        
         return view('users.show', $data);
+        
     }
     
     
