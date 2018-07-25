@@ -5,6 +5,7 @@ body {
     background-attachment: fixed;
     background-size: cover;
     color: white;
+    
 }
 
 h1 {
@@ -187,11 +188,11 @@ h1, h5, p{
     position: relative;
     padding: 0.5em 0.7em;
     margin: 2em 0;
-    background: #ffffdb;
-    color: #6f4b3e;
+    background: #eabd00;
+    color: white;
     font-weight: bold;
     display: inline-block;
-    width: 30%;
+    width: 33%;
     
 }
 .posts:after {
@@ -240,7 +241,10 @@ h1, h5, p{
     z-index: -2;
 }
 
-
+a {
+    color: white;
+    text-decoration: none;
+}
 /*ここまでpostのCSS(りな)*/
 
 .pagetop
@@ -291,6 +295,8 @@ img {
     width: 100%;
     height: 100%;
 }
+
+
 
 
 

@@ -5,6 +5,8 @@ body{
     background-attachment: fixed;
     background-size: cover;
     background-color: #464646;
+    max-width: 100%;
+
     
 }
 
@@ -149,8 +151,9 @@ body{
 }
 
 .title-logo img{
-    width: 500px;
-    height: 250px;
+    width: 600px;
+    height: auto;
+    max-width: 100%;
     margin-top: 50px;
     animation: float_6510 3s linear infinite;
     transform-origin: 50% 50%;
@@ -166,8 +169,9 @@ body{
 }
 
 .hiima-kun img{
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: auto;
+    max-width: 100%;
     margin-top: 0;
     animation: tada_2736 3.6s linear infinite;
     transform-origin: 50% 50%;
@@ -194,6 +198,8 @@ body,html, main {
     /* important */
     height: 100%;
     width: 100%;
+    max-width: 100%; 
+
 }
   
 .cd-fixed-bg {
