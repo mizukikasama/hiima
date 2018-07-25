@@ -81,8 +81,29 @@
             <!--textarea追加りな-->
             <span class="help-block">{{$errors->first('body')}}</span>
         </div>
-        
-        {!! Form::submit('Share', ['class' => 'btn btn-warning btn-lg']) !!}
+                  <div class="text">
+               @include('user_follow.follow_button', ['user' => $user])
+            <h4>profile</h4>
+           {{Form::open (['route' => ['users.edit', $user->id]])}}
+                            <!--body plaeholder追加、かほ-->
+                <div class="form-group @if(!empty($errors->first('body'))) has-error @endif">
+                @if($user->id == Auth::id())
+                    <textarea input type="textarea" placeholder="自己紹介" name="body"
+                     class="form-control">{{$user->profile}}</textarea> 
+                @else
+                    <div> {{$user->profile}}</div> 
+                @endif
+
+                    <!--textarea追加かほ-->
+                    <span class="help-block">{{$errors->first('body')}}</span>
+                </div>
+                <div class="btn"></div>
+                @if($user->id == Auth::id())
+                {!! Form::submit('edit', ['class' => 'btn btn-warning btn-lg']) !!}
+                @endif
+            <!--</form>-->
+           </div>
+            {{Form::close()}}
 
         {!! Form::submit('ヒマ', ['class' => 'btn btn-warning btn-lg active']) !!}
 
