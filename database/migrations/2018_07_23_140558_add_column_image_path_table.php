@@ -4,19 +4,17 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePostTagTable extends Migration
+class AddColumnImagePathTable extends Migration
 {
     /**
      * Run the migrations.
      *
      * @return void
      */
-    public function up()//中身たしたよ。みづき
+    public function up()
     {
-        Schema::create('post_tag', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('post_id');
-            $table->integer('tag_id');
+        Schema::table('categories', function (Blueprint $table) {
+              $table->string('image_path')->nullable(true);
         });
     }
 
@@ -27,6 +25,5 @@ class CreatePostTagTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('post_tag');
     }
 }

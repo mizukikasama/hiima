@@ -5,6 +5,8 @@ body {
     background-attachment: fixed;
     background-size: cover;
     color: #6f4b3e;
+    font-family: "メイリオ", sans-serif;
+    font-weight: bold;
 }
 .text {
     color:#333300 ;
@@ -33,4 +35,53 @@ body {
 .btn:hover:before{
     top: -webkit-calc(100% - 3px);
     top: calc(100% - 3px);
+}
+
+/*.nav-tabs {*/
+/*    border: none;*/
+/*    position: relative;*/
+/*    padding: 0.6em;*/
+   
+    /*ボーダー設定*/
+/*    background: -webkit-repeating-linear-gradient(-45deg, #89c4ff, #89c4ff 4px,#99ccff 3px, #99ccff 8px);*/
+/*    background: repeating-linear-gradient(-45deg, #89c4ff, #89c4ff 4px,#99ccff 3px, #99ccff 8px);*/
+/*    border-radius: 7px;*/
+/*}*/
+
+/*吹き出しの三角*/
+.nav-tabs .active :after {
+    position: absolute;
+    content: '';
+    top: 100%;
+    left: 30px;
+    border: 15px solid transparent;
+    border-top: 15px solid #ffff7f;
+    width: 0;
+    height: 0;
+}
+/*カウントしてる数字の色*/
+.badge {
+    background-color: #ffc993;
+}
+
+.nav-tabs.nav-justified>.active>a {
+    border-bottom-color: #ffff7f;
+}
+
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus {
+    background-color: #ffff7f;
+}
+
+
+
+.nav-tabs.nav-justified>li>a {
+    border-bottom: 3px solid #ffff7f;
+}
+
+.nav-tabs>li.active>a:hover {
+    background-color: #ffffcc;
+}
+
+.panel-heading {
+    background-color: white;
 }

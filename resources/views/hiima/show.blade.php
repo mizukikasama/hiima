@@ -1,39 +1,18 @@
-<link rel="stylesheet" href="{{ secure_asset('css/hiima.css') }}">
-
 @extends('layouts.app')
 @section('content')<!--内容を確認するよリサ-->
 
-    <h1>id = {{ $post->id }}のヒマ詳細表示</h1>
+    <h1>内容表示</h1>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <a href="/form" class="btn btn-primary" style="margin:20px;">フォームに戻る</a>
+        </div>
+    </div>
 
     <!-- table -->
     <table class="table table-striped">
-         <tr>
-            <th>id</th>
-            <td>{{ $post->id }}</td>
-        </tr>
-        <tr>
-            <th>場所</th>
-            <td>
-            @foreach($tags as $tag)
-                {{ $tag->name }}  
-            @endforeach
-        </td>
-        </tr>               
-        <tr>
-            <th>したいこと</th>
-            <td>{{ $post->body }}</td>
-        </tr> 
-        <tr>
-            <th>参加者</th>
-            <td>
-            @foreach($user_id as $user)
-                {{ $user->nickname }}  
-            @endforeach
-            </td>
-        </tr> 
+        <tr><td>タグ</td><td>{{$inputs["name"]}}</tr>
+        <tr><td>内容</td><td>{{$inputs["body"]}}</tr>
     </table>
-    
-    {!! link_to_route('hiima.show', '一緒にヒマをつぶそう', ['id' => $post->id], ['class' => 'btn btn-default']) !!}
 
-    
-@endsection
+@stop

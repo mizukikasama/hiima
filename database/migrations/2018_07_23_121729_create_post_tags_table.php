@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePostUserTable extends Migration
+class CreatePostTagsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,18 +13,18 @@ class CreatePostUserTable extends Migration
      */
     public function up()
     {
-        Schema::create('post_user', function (Blueprint $table) {
+        Schema::create('post_tag', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id')->unsigned()->index();
             $table->integer('post_id')->unsigned()->index();
+            $table->integer('tag_id')->unsigned()->index();
             $table->timestamps();
             
             //Foreign key setting
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('post_id')->references('id')->on('posts')->onDelete('cascade');
+            $table->foreign('tag_id')->references('id')->on('tags')->onDelete('cascade');
             
             // Do not allow duplication of combination of user_id and follow_id
-            $table->unique(['user_id', 'post_id']); 
+            $table->unique(['post_id', 'tag_id']); 
         });
     }
 
@@ -35,6 +35,6 @@ class CreatePostUserTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('post_user');
+        Schema::dropIfExists('post_tag');
     }
 }

@@ -7,16 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {   protected $fillable = ['body'];
     
-    public function users()//足したよ。ばなな
+    public function user()//足したよ。ばなな
     {
-        return $this->belongsToMany(User::class);
+        return $this->belongsTo(User::class);
     }
     
     public function tags()//足したよ。みづき
     {
-        return $this->belongsToMany(Tag::class)->withPivot('user_id');
-        // post_tag : id, post_id, tag_id, user_id
+        return $this->belongsToMany(Tag::class);
     }
-    
-
 }

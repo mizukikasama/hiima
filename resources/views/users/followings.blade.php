@@ -1,11 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
+<link rel="stylesheet" href="{{ secure_asset('css/show.css') }}">
     <div class="row">
         <aside class="col-xs-4">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title">{{ $user->name }}</h3>
+                    <h3 class="panel-title">{{ $user->nickname }}</h3>
                 </div>
                 <div class="panel-body">
                     
@@ -20,6 +21,7 @@
                  <li role="presentation" class="{{ Request::is('users/' . $user->id) ? 'active' : '' }}"><a href="{{ route('users.show', ['id' => $user->id]) }}">History <span class="badge">{{ $count_histories }}</span></a></li>
                 <li role="presentation" class="{{ Request::is('users/*/followings') ? 'active' : '' }}"><a href="{{ route('users.followings', ['id' => $user->id]) }}">Followings <span class="badge">{{ $count_followings }}</span></a></li>
                 <li role="presentation" class="{{ Request::is('users/*/followers') ? 'active' : '' }}"><a href="{{ route('users.followers', ['id' => $user->id]) }}">Followers <span class="badge">{{ $count_followers }}</span></a></li>
+               
             </ul>
               <div style="margin-top:30px;">
             @include('users.users', ['users' => $users])

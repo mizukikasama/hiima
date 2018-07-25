@@ -23,6 +23,9 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
     
+    public function posts(){
+        return $this->hasMany(Post::class);
+    }
     //追加しちょ　あき
     public function followings()
     {
@@ -75,58 +78,113 @@ public function is_following($userId) {
     return $this->followings()->where('follow_id', $userId)->exists();
 }
 
+// // 以下ばななへ透過したhiimaくんに変更してます！りな
+// imageファイルのlogo.yellow.pngとかが透過したhiimaくんだよ（りな）
+
 static function image_map($user_id) {
     $array = [
-        '1' => 'image/logo1.jpg',
-        '2' => 'image/logo2.jpg', 
-        '3' => 'image/logo3.jpg',
-        '4' => 'image/logo4.jpg',
-        '5' => 'image/logo5.jpg', 
-        '6' => 'image/logo1.jpg',
-        '7' => 'image/logo2.jpg',
-        '8' => 'image/logo3.jpg', 
-        '9' => 'image/logo4jpg',
-        '10' => 'image/logo5.jpg',
-        '11' => 'image/logo1.jpg', 
-        '12' => 'image/logo2.jpg',
-        '13' => 'image/logo3.jpg',
-        '14' => 'image/logo4.jpg', 
-        '15' => 'image/logo5.jpg',
-        '16' => 'image/logo1.jpg',
-        '17' => 'image/logo2.jpg', 
-        '18' => 'image/logo3.jpg',
-        '19' => 'image/logo4.jpg',
-        '20' => 'image/logo5.jpg', 
-        '21' => 'image/logo1.jpg',
-        '22' => 'image/logo2.jpg',
-        '23' => 'image/logo3.jpg', 
-        '24' => 'image/logo4.jpg',
-        '25' => 'image/logo5.jpg',
-        '26' => 'image/logo1.jpg', 
-        '27' => 'image/logo2.jpg',
-        '28' => 'image/logo3.jpg',
-        '29' => 'image/logo4.jpg', 
-        '30' => 'image/logo5.jpg',
-        '31' => 'image/logo1.jpg',
-        '32' => 'image/logo2.jpg', 
-        '33' => 'image/logo3.jpg',
-        '34' => 'image/logo4.jpg',
-        '35' => 'image/logo5.jpg', 
-        '36' => 'image/logo1.jpg',
-        '37' => 'image/logo2.jpg',
-        '38' => 'image/logo3.jpg', 
-        '39' => 'image/logo4.jpg',
-        '40' => 'image/logo5.jpg',
-        '41' => 'image/logo1.jpg', 
-        '42' => 'image/logo2.jpg',
-        '43' => 'image/logo3.jpg',
-        '44' => 'image/logo4.jpg', 
-        '45' => 'image/logo5.jpg',
-        '46' => 'image/logo1.jpg',
-        '47' => 'image/logo2.jpg', 
-        '48' => 'image/logo3.jpg',
-        '49' => 'image/logo4.jpg',
-        '50' => 'image/logo5.jpg', 
+        '1' => 'image/logo.yellow.png',
+        '2' => 'image/logo.blue.png', 
+        '3' => 'image/logo.pink.png',
+        '4' => 'image/logo.green.png',
+        '5' => 'image/logo.purple.png', 
+        '6' => 'image/logo.yellow.png',
+        '7' => 'image/logo.blue.png', 
+        '8' => 'image/logo.pink.png',
+        '9' => 'image/logo.green.png',
+        '10' => 'image/logo.purple.png', 
+        '11' => 'image/logo.yellow.png',
+        '12' => 'image/logo.blue.png', 
+        '13' => 'image/logo.pink.png',
+        '14' => 'image/logo.green.png',
+        '15' => 'image/logo.purple.png', 
+        '16' => 'image/logo.yellow.png',
+        '17' => 'image/logo.blue.png', 
+        '18' => 'image/logo.pink.png',
+        '19' => 'image/logo.green.png',
+        '20' => 'image/logo.purple.png', 
+        '21' => 'image/logo.yellow.png',
+        '22' => 'image/logo.blue.png', 
+        '23' => 'image/logo.pink.png',
+        '24' => 'image/logo.green.png',
+        '25' => 'image/logo.purple.png', 
+        '26' => 'image/logo.yellow.png',
+        '27' => 'image/logo.blue.png', 
+        '28' => 'image/logo.pink.png',
+        '29' => 'image/logo.green.png',
+        '30' => 'image/logo.purple.png', 
+        '31' => 'image/logo.yellow.png',
+        '32' => 'image/logo.blue.png', 
+        '33' => 'image/logo.pink.png',
+        '34' => 'image/logo.green.png',
+        '35' => 'image/logo.purple.png', 
+        '36' => 'image/logo.yellow.png',
+        '37' => 'image/logo.blue.png', 
+        '38' => 'image/logo.pink.png',
+        '39' => 'image/logo.green.png',
+        '40' => 'image/logo.purple.png', 
+        '41' => 'image/logo.yellow.png',
+        '42' => 'image/logo.blue.png', 
+        '43' => 'image/logo.pink.png',
+        '44' => 'image/logo.green.png',
+        '45' => 'image/logo.purple.png', 
+        '46' => 'image/logo.yellow.png',
+        '47' => 'image/logo.blue.png', 
+        '48' => 'image/logo.pink.png',
+        '49' => 'image/logo.green.png',
+        '50' => 'image/logo.purple.png', 
+        '51' => 'image/logo.yellow.png',
+        '52' => 'image/logo.blue.png', 
+        '53' => 'image/logo.pink.png',
+        '54' => 'image/logo.green.png',
+        '55' => 'image/logo.purple.png', 
+        '56' => 'image/logo.yellow.png',
+        '57' => 'image/logo.blue.png', 
+        '58' => 'image/logo.pink.png',
+        '59' => 'image/logo.green.png',
+        '60' => 'image/logo.purple.png', 
+        '61' => 'image/logo.yellow.png',
+        '62' => 'image/logo.blue.png', 
+        '63' => 'image/logo.pink.png',
+        '64' => 'image/logo.green.png',
+        '65' => 'image/logo.purple.png', 
+        '66' => 'image/logo.yellow.png',
+        '67' => 'image/logo.blue.png', 
+        '68' => 'image/logo.pink.png',
+        '69' => 'image/logo.green.png',
+        '70' => 'image/logo.purple.png', 
+        '71' => 'image/logo.yellow.png',
+        '72' => 'image/logo.blue.png', 
+        '73' => 'image/logo.pink.png',
+        '74' => 'image/logo.green.png',
+        '75' => 'image/logo.purple.png', 
+        '76' => 'image/logo.yellow.png',
+        '77' => 'image/logo.blue.png', 
+        '78' => 'image/logo.pink.png',
+        '79' => 'image/logo.green.png',
+        '80' => 'image/logo.purple.png', 
+        '81' => 'image/logo.yellow.png',
+        '82' => 'image/logo.blue.png', 
+        '83' => 'image/logo.pink.png',
+        '84' => 'image/logo.green.png',
+        '85' => 'image/logo.purple.png', 
+        '86' => 'image/logo.yellow.png',
+        '87' => 'image/logo.blue.png', 
+        '88' => 'image/logo.pink.png',
+        '89' => 'image/logo.green.png',
+        '90' => 'image/logo.purple.png', 
+        '91' => 'image/logo.yellow.png',
+        '92' => 'image/logo.blue.png', 
+        '93' => 'image/logo.pink.png',
+        '94' => 'image/logo.green.png',
+        '95' => 'image/logo.purple.png', 
+        '96' => 'image/logo.yellow.png',
+        '97' => 'image/logo.blue.png', 
+        '98' => 'image/logo.pink.png',
+        '99' => 'image/logo.green.png',
+        '100' => 'image/logo.purple.png', 
+      
+       
       
         
         // ここを複製しまくる明日
@@ -136,19 +194,19 @@ static function image_map($user_id) {
     return $array[$user_id];
 }
 
-public function feed_histories()
-    {
+// public function feed_histories()
+    // {
 //$follow_user_ids = $this->followings()-> pluck('users.id')->toArray();
   //      $follow_user_ids[] = $this->id;
         //return Post::whereIn('user_id', $follow_user_ids);//
        
-        $results = \DB::select('select * from post_tag where user_id = :id', ['id' => $this->id]);
+        // $results = \DB::select('select * from post_user where user_id = :id', ['id' => $this->id]);
 /*        foreach($results as $result) {
             User::find($result->user_id);
             Post::find($result->post_id);
             Tag::find($result->tag_id);
             }
         }*/
-        return $results;
-    }
+        // return $results;
+    // }
 }
