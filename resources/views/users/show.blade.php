@@ -44,11 +44,11 @@
         <hr>
        <div style="display:block; margin-top:40px;">
        
-        <div style="display:inline-block;">
+        <div style="display:inline-block; ">
      
                 <img class="media-object img-rounded img-responsive" src="{{ asset(App\User::image_map($h->user_id))}}" alt="" style='width:100px;'>
       </div>
-        <div style="display:inline-block; margin-top:30px;">
+        <div style="display:inline-block;margin-left:auto;margin-right:auto; margin-top:30px;">
       
         <p>ユーザー名: {{App\User::find($h->user_id)->nickname}}</p> <!--追加したよ。ばなな-->
         <p>カテゴリー:  @foreach ($h->tags as $tag) {{ $tag->name }} @endforeach </p>
