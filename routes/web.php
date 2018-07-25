@@ -73,6 +73,7 @@ Route::view('hajimete5','hajimete.hajimete5')->name('hajimete.hajimete5');
 
 
 //following機能追加しちょ（あき）
+
 Route::group(['middleware' => 'auth'], function () {
     Route::resource('users', 'UsersController', ['only' => ['index', 'show']]);
     Route::group(['prefix' => 'users/{id}'], function () {
@@ -80,9 +81,10 @@ Route::group(['middleware' => 'auth'], function () {
         Route::delete('unfollow', 'UserFollowController@destroy')->name('user.unfollow');
         Route::get('followings', 'UsersController@followings')->name('users.followings');
         Route::get('followers', 'UsersController@followers')->name('users.followers');
+        Route::post('edit', 'UsersController@edit')->name('users.edit');
         
     });
-      //足したよ//aki 
+      //足したよaki 
     Route::resource('histories', 'Controller', ['only' => ['store', 'destroy']]);
 });
 
