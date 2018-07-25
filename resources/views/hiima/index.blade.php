@@ -8,7 +8,7 @@
     <img src="css/hiima.logo.png"/>
     </a>
 </p>
-<h1 id="top">まずは自分のヒマを提供しよう！</h1>
+<h1 id="top">〇〇さんは今日どこで何したい？</h1>
 
    {{$errorMessage}}
    {{Form::open(['route'=>'hiima.store'])}}
@@ -20,7 +20,7 @@
         <div class="form-group @if(!empty($errors->first('name'))) has-error @endif">
 
 
-        <h5>場所を選択してね</h5>
+        <h5>1.どこで(複数選択OK)</h5>
 
 <!--<div class ="box">-->
 <!--ここから下はチェックボックス-->
@@ -54,7 +54,7 @@
 
         <!--body plaeholder追加、かほ-->
         <div class="form-group @if(!empty($errors->first('body'))) has-error @endif">
-            <textarea input type="textarea" placeholder="今日何したい？(例:2人でパンケーキ食べたい)" name="body" value="{{old('name')}}" class="form-control"></textarea> 
+            <textarea input type="textarea" placeholder="もっと詳しく！(例:2人でパンケーキ食べたい)" name="body" value="{{old('name')}}" class="form-control"></textarea> 
             <!--textarea追加りな-->
             <span class="help-block">{{$errors->first('body')}}</span>
         </div>
@@ -106,9 +106,11 @@
              $imgPath = 'image/category_pizza.jpg';
         }
         elseif($category == 14) {
+             $imgPath = 'image/category_tyuka.jpg';
+        }
+                elseif($category == 15) {
              $imgPath = 'image/category_washoku.jpg';
         }
-        
     ?>
     
     <div class ="posts">
@@ -120,12 +122,12 @@
                 ?>
 
         <p>
-            <img src="{{$imgPath}}" width="400px" height="300px" alt="cafe">
+            <img src="{{$imgPath}}" width="400px" height="300px" alt="photo">
         </p>
         
         <!--<p>詳しくは: {!! link_to_route('hiima.show', $post->id, ['id' => $post->id]) !!}</p>-->
         <br>
-        <a href="{{Route('hiima.show', $post->id)}}"><img src="image/botton.png" width="150px" height="50px" alt="今すぐ始める"></a>
+        <a href="{{Route('hiima.show', $post->id)}}"><img src="image/mini.hiima1.png" width="150px" height="50px" alt="詳しくはコチラ"></a>
 
      
     
