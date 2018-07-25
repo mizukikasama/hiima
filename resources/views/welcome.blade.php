@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="{{ secure_asset('css/welcome.css') }}">
+
 <!--<link rel="stylesheet" href="{{ secure_asset('css/scroll.css') }}">-->
 
 @extends('layouts.app')<!--auth check をつけたよ　（りさ）-->
