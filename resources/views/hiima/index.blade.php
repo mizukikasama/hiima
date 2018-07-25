@@ -3,6 +3,7 @@
 
 <!doctype html> <!--エラー追加したよ。りさ-->
 <link rel="stylesheet" href="{{ secure_asset('css/hiima.css') }}">
+
 <p class= "pagetop">
     <a href="#top" title="ページトップへ戻る">
     <img src="css/hiima.logo.png"/>
@@ -46,6 +47,7 @@
         <span class="help-block">{{$errors->first('name')}}</span>
             @endforeach
         
+        
         <br>
         <br>
         <br>
@@ -57,8 +59,10 @@
 
 
  <!--この下はラジオボックス-->
+        
             @foreach ($categories as $category)
             <label class="label-radio">
+                
                 
                 {!! Form::label('categories[]',' ') !!}
                 {!! Form::radio('categories[]',$category->id, null ) !!}<span class="lever">{{ $category->name }}</span>
@@ -174,7 +178,7 @@
          
             <div>
 
-                @if (Auth::user()->id == $user_id)
+                @if (Auth::user()->id == $post->user_id)
                     {!! Form::open(['route' => ['hiima.destroy', $post->id], 'method' => 'delete']) !!}
                     
                      <!--{{ Form::hidden('invisible',$post->id)}}-->
@@ -182,6 +186,7 @@
                         {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-xs']) !!}
                     {!! Form::close() !!}
                 @endif
+                <br>
             </div>
          <!--投稿内容ここまで-->
 
