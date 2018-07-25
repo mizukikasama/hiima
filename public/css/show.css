@@ -8,8 +8,34 @@ body {
     font-family: "メイリオ", sans-serif;
     font-weight: bold;
 }
-
-
+.text {
+    color:#333300 ;
+    font-family: cursive;
+    font-size: 15px;
+}
+.btn{
+   position: relative;
+   display: inline-block;
+   font-weight: bold;
+   padding: 0.25em 0;
+   text-decoration: none;
+   color: white;   
+}
+.btn:before{
+       position: absolute;
+   content: '';
+   width: 100%;
+   height: 4px;
+   top:100%;
+   left: 0;
+   border-radius: 3px;
+   background:#550000;
+   transition: .2s;
+}
+.btn:hover:before{
+    top: -webkit-calc(100% - 3px);
+    top: calc(100% - 3px);
+}
 
 /*.nav-tabs {*/
 /*    border: none;*/
@@ -56,6 +82,10 @@ body {
 /*    background-color: #ffffcc;*/
 /*}*/
 
+.panel-heading {
+    background-color: white;
+}
+
 /*変更したよりな*/
 /*ひーま君の上の「りなさん」の部分*/
 .panel-default>.panel-heading {
@@ -76,9 +106,11 @@ body {
    background-image: url("sougen.jpg");
 }
 
+
 hr {
     margin-top: 20px;
     margin-bottom: 20px;
     border: 0;
     border-top: 1px solid #ffff7f;
 }
+
