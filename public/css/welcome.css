@@ -10,9 +10,14 @@ body{
     
 }
 
-.center jumbotron{
-    background-color: rgba(255,0,0,0.5);
+/*.center jumbotron{*/
+/*    background-color: rgba(255,0,0,0.5);*/
     
+/*}*/
+
+.text-center{
+  height: 100%;
+  position: relative;
 }
 
 .text-center h1{
@@ -20,8 +25,6 @@ body{
     font-weight: 900;
     margin-top: 0;
     font-size: 90px;
-    
-    
     position: relative;
     padding: 0.25em 1em;
     /*border-top: solid 2px black;*/
@@ -47,114 +50,115 @@ body{
   DEFAULT BOOTSTRAP STYLES
 **************************/
 
-.btn {
-  display: inline-block;
-  padding: 6px 12px;
-  margin-bottom: 0;
-  font-family: 'Amatic SC', cursive;
-  font-size: 14px;
-  font-weight: normal;
-  line-height: 1.42857143;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: middle;
-  cursor: pointer;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  background-image: none;
-  border: 1px solid transparent;
-  border-radius: 4px;
-  padding: 10px 16px;
-}
+/*.btn {*/
+/*  display: inline-block;*/
+/*  padding: 6px 12px;*/
+/*  margin-bottom: 0;*/
+/*  font-family: 'Amatic SC', cursive;*/
+/*  font-size: 14px;*/
+/*  font-weight: normal;*/
+/*  line-height: 1.42857143;*/
+/*  text-align: center;*/
+/*  white-space: nowrap;*/
+/*  vertical-align: middle;*/
+/*  cursor: pointer;*/
+/*  -webkit-user-select: none;*/
+/*     -moz-user-select: none;*/
+/*      -ms-user-select: none;*/
+/*          user-select: none;*/
+/*  background-image: none;*/
+/*  border: 1px solid transparent;*/
+/*  border-radius: 4px;*/
+/*  padding: 0px 0px;*/
+/*}*/
   
-.btn-lg {
-  font-size: 18px;
-  line-height: 1.33;
-  border-radius: 6px;
-}
+/*.btn-lg {*/
+/*  font-size: 18px;*/
+/*  line-height: 1.33;*/
+/*  border-radius: 6px;*/
+/*}*/
 
-.btn-primary {
-  color: #fff;
-  background-color: #428bca;
-  border-color: #357ebd;
-}
+/*.btn-primary {*/
+/*  color: #fff;*/
+/*  background-color: #428bca;*/
+/*  border-color: #357ebd;*/
+/*}*/
 
-.btn-primary:hover,
-.btn-primary:focus,
-.btn-primary:active,
-.btn-primary.active,
-.open .dropdown-toggle.btn-primary {
-  color: #fff;
-  background-color: #3276b1;
-  border-color: #285e8e;
-}
+/*.btn-primary:hover,*/
+/*.btn-primary:focus,*/
+/*.btn-primary:active,*/
+/*.btn-primary.active,*/
+/*.open .dropdown-toggle.btn-primary {*/
+/*  color: #fff;*/
+/*  background-color: #3276b1;*/
+/*  border-color: #285e8e;*/
+/*}*/
 
 /***********************
   GRADIENT BUTTONS
 ************************/
-.btn-primary.gradient {
-    background: -moz-linear-gradient(top,  #33a6cc 50%, #0099cc 50%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(50%,#33a6cc), color-stop(50%,#0099cc)); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top,  #33a6cc 50%,#0099cc 50%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top,  #33a6cc 50%,#0099cc 50%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top,  #33a6cc 50%,#0099cc 50%); /* IE10+ */
-    background: linear-gradient(to bottom,  #33a6cc 50%,#0099cc 50%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#33a6cc', endColorstr='#0099cc',GradientType=0 ); /* IE6-9 */
+/*.btn-primary.gradient {*/
+   /* background: -moz-linear-gradient(top,  #33a6cc 50%, #0099cc 50%); /* FF3.6+ 
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(50%,#33a6cc), color-stop(50%,#0099cc)); /* Chrome,Safari4+ 
+    background: -webkit-linear-gradient(top,  #33a6cc 50%,#0099cc 50%); /* Chrome10+,Safari5.1+ 
+    background: -o-linear-gradient(top,  #33a6cc 50%,#0099cc 50%); /* Opera 11.10+ 
+    background: -ms-linear-gradient(top,  #33a6cc 50%,#0099cc 50%); /* IE10+ 
+    background: linear-gradient(to bottom,  #33a6cc 50%,#0099cc 50%); /* W3C 
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#33a6cc', endColorstr='#0099cc',GradientType=0 ); /* IE6-9 
 }
 .btn-primary.gradient:hover, .btn-primary.gradient:focus, .btn-primary.gradient:active, .btn-primary.gradient.active, .open > .dropdown-toggle.btn-primary {
     background: -moz-linear-gradient(top,  #66b2cc 50%, #33a6cc 50%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(50%,#66b2cc), color-stop(50%,#33a6cc)); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top,  #66b2cc 50%,#33a6cc 50%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top,  #66b2cc 50%,#33a6cc 50%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top,  #66b2cc 50%,#33a6cc 50%); /* IE10+ */
-    background: linear-gradient(to bottom,  #66b2cc 50%,#33a6cc 50%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66b2cc', endColorstr='#33a6cc',GradientType=0 ); /* IE6-9 */
-}
-.btn-primary.gradient:active, .btn-primary.gradient.active {
-    background: -moz-linear-gradient(top,  #267c99 50%, #007299 50%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(50%,#267c99), color-stop(50%,#007299)); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top,  #267c99 50%,#007299 50%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top,  #267c99 50%,#007299 50%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top,  #267c99 50%,#007299 50%); /* IE10+ */
-    background: linear-gradient(to bottom,  #267c99 50%,#007299 50%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#267c99', endColorstr='#007299',GradientType=0 ); /* IE6-9 */
-}
+    /*background: -webkit-gradient(linear, left top, left bottom, color-stop(50%,#66b2cc), color-stop(50%,#33a6cc)); /* Chrome,Safari4+ 
+    background: -webkit-linear-gradient(top,  #66b2cc 50%,#33a6cc 50%); /* Chrome10+,Safari5.1+ 
+    background: -o-linear-gradient(top,  #66b2cc 50%,#33a6cc 50%); /* Opera 11.10+ 
+    background: -ms-linear-gradient(top,  #66b2cc 50%,#33a6cc 50%); /* IE10+ 
+    background: linear-gradient(to bottom,  #66b2cc 50%,#33a6cc 50%); /* W3C 
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66b2cc', endColorstr='#33a6cc',GradientType=0 ); /* IE6-9 
+/*}*/
+/*.btn-primary.gradient:active, .btn-primary.gradient.active {*/
+   /* background: -moz-linear-gradient(top,  #267c99 50%, #007299 50%); /* FF3.6+ 
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(50%,#267c99), color-stop(50%,#007299)); /* Chrome,Safari4+ 
+    background: -webkit-linear-gradient(top,  #267c99 50%,#007299 50%); /* Chrome10+,Safari5.1+ 
+    background: -o-linear-gradient(top,  #267c99 50%,#007299 50%); /* Opera 11.10+ 
+    background: -ms-linear-gradient(top,  #267c99 50%,#007299 50%); /* IE10+ 
+    background: linear-gradient(to bottom,  #267c99 50%,#007299 50%); /* W3C 
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#267c99', endColorstr='#007299',GradientType=0 ); /* IE6-9 
+/*}*/
 
 /***********************
   CUSTON BTN VALUES
 ************************/
 
-.btn {
-    padding: 14px 24px;
-    border: 0 none;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    text-align: center;
-}
-.btn:focus, .btn:active:focus, .btn.active:focus {
-    outline: 0 none;
-}
+/*.btn {*/
+/*    padding: 14px 24px;*/
+/*    border: 0 none;*/
+/*    font-weight: 700;*/
+/*    letter-spacing: 1px;*/
+/*    text-transform: uppercase;*/
+/*    text-align: center;*/
+/*}*/
+/*.btn:focus, .btn:active:focus, .btn.active:focus {*/
+/*    outline: 0 none;*/
+/*}*/
 
-.btn-primary {
-    background: #0099cc;
-    color: #ffffff;
-}
-.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
-    background: #33a6cc;
-}
-.btn-primary:active, .btn-primary.active {
-    background: #007299;
-    box-shadow: none;
-}
+/*.btn-primary {*/
+/*    background: #0099cc;*/
+/*    color: #ffffff;*/
+/*}*/
+/*.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {*/
+/*    background: #33a6cc;*/
+/*}*/
+/*.btn-primary:active, .btn-primary.active {*/
+/*    background: #007299;*/
+/*    box-shadow: none;*/
+/*}*/
 
 .title-logo img{
     width: 600px;
     height: auto;
     max-width: 100%;
-    margin-top: 50px;
+    margin-top: 0px;
+    position: relative;
     animation: float_6510 3s linear infinite;
     transform-origin: 50% 50%;
 }
@@ -172,7 +176,9 @@ body{
     width: 300px;
     height: auto;
     max-width: 100%;
+    left: auto;
     margin-top: 0;
+    position: relative;
     animation: tada_2736 3.6s linear infinite;
     transform-origin: 50% 50%;
 }
@@ -190,17 +196,87 @@ body{
   100% { transform:scale(1) rotate(0) }
 }
 
+/*ここからスクロールボタンCSS*/
+.scroll-button a {
+  font-family: 'Amatic SC', cursive;
+  margin-top: 100px;
+  bottom: 20px;
+  left: 50%;
+  z-index: 2;
+  display: inline-block;
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  text-decoration: none;
+  padding-top: 80px;
+  color: #3399ff;
+}
+
+.scroll-button a span {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 24px;
+  height: 24px;
+  margin-left: -12px;
+  border-left: 1px solid #3399ff;
+  border-bottom: 1px solid #3399ff;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  -webkit-animation: sdb 2s infinite;
+  animation: sdb 2s infinite;
+  opacity: 0;
+  box-sizing: border-box;
+}
+.scroll-button a span:nth-of-type(1) {
+  -webkit-animation-delay: 0s;
+  animation-delay: 0s;
+}
+.scroll-button a span:nth-of-type(2) {
+  top: 16px;
+  -webkit-animation-delay: .15s;
+  animation-delay: .15s;
+}
+.scroll-button a span:nth-of-type(3) {
+  top: 32px;
+  -webkit-animation-delay: .3s;
+  animation-delay: .3s;
+}
+@-webkit-keyframes sdb {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes sdb {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/*ここまでスクロールボタンCSS*/
 
 
 
 /*ここから背景固定のCSS*/
-body,html, main {
+/*body,html, main {*/
     /* important */
-    height: 100%;
-    width: 100%;
-    max-width: 100%; 
+/*    height: 100%;*/
+/*    width: 100%;*/
+/*    max-width: 100%; */
+    
 
-}
+/*}*/
   
 .cd-fixed-bg {
     min-height: 100%;
@@ -208,21 +284,30 @@ body,html, main {
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: center center;
+    
+
 }
   
 .cd-fixed-bg.cd-bg-1 {
-   background-image: url("rina_himawari1.jpg");
+  background: rgba(0,0,0,0);
 }
 .cd-fixed-bg.cd-bg-2 {
-  background-image: url("rina_himawari2.jpg");
+  background-image: url("hiimatsukaikata1.jpg");
+  background-size: 100% auto;
+  
 }
 .cd-fixed-bg.cd-bg-3 {
-  background-image: url("rina_himawari3.jpg");
+  background-image: url("hiimatsukaikata2.jpg");
+   background-size: 100% auto;
 }
-.cd-fixed-bg.cd-bg-4 {
-  background-image: url("rina_himawari4.jpg");
-}
+/*.cd-fixed-bg.cd-bg-4 {*/
+/*  background-image: url("hiima.tsukaikata.jpg");*/
+/*   background-size: contain;*/
+/*}*/
   
 .cd-scrolling-bg {
-    min-height: 100%;
+  min-height: 100%;
+  background-attachment: fixed;
+  background-size: cover;
+  
 }
