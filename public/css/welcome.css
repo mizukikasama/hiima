@@ -315,3 +315,37 @@ body{
   background-size: cover;
   
 }
+
+/*ここからページトップ*/
+.pagetop
+    {
+    position: fixed;
+    bottom: 16px;
+    right: 16px;
+    }
+    
+.pagetop img {
+    width: 80px;
+    height: 80px;
+    animation: pulse_460 4s linear infinite;
+    transform-origin: 50% 50%;
+}
+
+@keyframes pulse_460 {
+  0% { transform: scale(1.1) }
+  25% { transform: scale(0.8) }
+  50% { transform: scale(1.1) }
+  100% { transform: scale(1.1) }
+
+}
+ 
+.pagetop a
+    {
+    display: block;
+    text-decoration: none;
+    }
+ 
+.pagetop:hover
+{
+    opacity: 0.85 ;
+}
