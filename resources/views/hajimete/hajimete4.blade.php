@@ -9,4 +9,7 @@
 
 {!! link_to_route('hajimete.hajimete5', 'next', '',  ['class' => 'button']) !!}
 
+<!--戻るボタン-->
+{!! link_to_route('hajimete.hajimete3', 'back', '',  ['class' => 'back_btn']) !!}
+
 @endsection

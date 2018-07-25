@@ -8,7 +8,18 @@
     <img src="css/hiima.logo.png"/>
     </a>
 </p>
-<h1 id="top">〇〇さんは今日どこで何したい？</h1>
+<h1 id="top">
+    @if (Auth::check())
+                                <p>{!! link_to_route('users.show', Auth::user()->nickname, ['id' => Auth::id()]) !!}さんはどこで何かしたい？</p>
+                            </ul>
+                        </li>
+                    @else
+                        <li>{!! link_to_route('signup.get', 'Signup') !!}</li>
+                        <li>{!! link_to_route('login', 'Login') !!}</li>
+                    @endif
+                        
+
+</h1>
 
    {{$errorMessage}}
    {{Form::open(['route'=>'hiima.store'])}}
@@ -118,7 +129,7 @@
                 $user_id = $post->tags()->get()[0]->pivot->user_id;
                 $user = App\User::find($post->user_id);
                 // $user = $post->users()->get();
-               // echo App\User::find($user_id)->name;""
+               // echo App\User::find($user_id)->name;
                 ?>
 
         <p>
@@ -127,7 +138,7 @@
         
         <!--<p>詳しくは: {!! link_to_route('hiima.show', $post->id, ['id' => $post->id]) !!}</p>-->
         <br>
-        <a href="{{Route('hiima.show', $post->id)}}"><img src="image/mini.hiima1.png" width="150px" height="50px" alt="詳しくはコチラ"class="kochira_img"></a>
+        <a href="{{Route('hiima.show', $post->id)}}"><img src="image/mini.hiima1.png" width="150px" height="50px" alt="詳しくはコチラ"class='kochira_img'></a>
 
      
     
