@@ -1,5 +1,5 @@
 body {
-    background-image: url("haikei1.himawari.jpg");
+    background-image: url("rina_aki1.jpg");
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -21,10 +21,16 @@ h1, h5, p{
   padding-top: 20px;
 }
 
-.box {
-    
-}
 
+
+.rina_aki {
+    padding: 20px;
+    margin: 40px 0;
+    width: 100%;
+    background: #9acce3;
+    border-radius: 8px;
+    color: #724938;
+}
 
 /*ここから下がチェックボックス*/
 /*.checkbox-wrap{*/
@@ -41,7 +47,7 @@ h1, h5, p{
 }
 .label-checkbox .lever{
 　font-family: 'fantasy';
-  color: #E5DCD1;
+  color: white;
   font-weight: bold;
   display: inline-block;
   padding: 8px 40px;
@@ -107,7 +113,7 @@ h1, h5, p{
 .label-radio{
   float: left;
   cursor: pointer;
-  color: #E5DCD1;
+  color: white;
   font-weight: bold;
   letter-spacing: 0;
   display: inline-block;
@@ -192,7 +198,7 @@ h1, h5, p{
     color: white;
     font-weight: bold;
     display: inline-block;
-    width: 33%;
+    width: 24%;
     
 }
 .posts:after {
@@ -286,7 +292,8 @@ a {
    font-weight: bold;
    padding: 0.25em 0;
    text-decoration: none;
-   color: white;   
+   color: white;  
+   width:100px; 
 }
 .btn:before{
        position: absolute;
@@ -315,6 +322,12 @@ img {
     height: 100%;
 }
 
+.kochira_img{
+    width:55%;
+    height:55%;
+    margin-bottom:25px;
+}
+
 /*詳しく*/
 .kochira_img{
     width:55%;
@@ -336,6 +349,7 @@ img {
     font-family: "メイリオ", sans-serif;
     font-weight: bold;
     color: white;/*文字*/
+    background-color:#4d639f; 
 }
 .sample_box3_1 .sample_box_title{
     position: absolute;

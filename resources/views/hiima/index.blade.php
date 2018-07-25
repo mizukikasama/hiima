@@ -3,14 +3,12 @@
 
 <!doctype html> <!--エラー追加したよ。りさ-->
 <link rel="stylesheet" href="{{ secure_asset('css/hiima.css') }}">
-
 <p class= "pagetop">
     <a href="#top" title="ページトップへ戻る">
     <img src="css/hiima.logo.png"/>
     </a>
 </p>
 <h1 id="top">
-    <br>
     @if (Auth::check())
                                 <p>{!! link_to_route('users.show', Auth::user()->nickname, ['id' => Auth::id()]) !!}さんはどこで何がしたい？</p>
                             </ul>
@@ -19,8 +17,9 @@
                         <li>{!! link_to_route('signup.get', 'Signup') !!}</li>
                         <li>{!! link_to_route('login', 'Login') !!}</li>
                     @endif
+                        
+
 </h1>
-    <br>
 
    {{$errorMessage}}
    {{Form::open(['route'=>'hiima.store'])}}
@@ -29,6 +28,7 @@
        
        
        <!--tag-->
+       <div class = "rina_aki">
         <div class="form-group @if(!empty($errors->first('name'))) has-error @endif">
 
 
@@ -45,24 +45,21 @@
             </label>
 
         <span class="help-block">{{$errors->first('name')}}</span>
-            @endforeach
-        
-        
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        
-        <h5>2.何を(複数選択不可)</h5>
-
+            @endforeach 
+        </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            
+            <h5>2.何を(複数選択不可)</h5>
 
 
  <!--この下はラジオボックス-->
-        
             @foreach ($categories as $category)
             <label class="label-radio">
-                
                 
                 {!! Form::label('categories[]',' ') !!}
                 {!! Form::radio('categories[]',$category->id, null ) !!}<span class="lever">{{ $category->name }}</span>
@@ -72,18 +69,20 @@
 
 
            <!--</div> -->
-            
-        </div>
-
+           <br>
+    
         <!--body plaeholder追加、かほ-->
         <div class="form-group @if(!empty($errors->first('body'))) has-error @endif">
-            <textarea input type="textarea" placeholder="もっと詳しく！(最大20文字)" name="body" value="{{old('name')}}" class="form-control"></textarea> 
+            <textarea input type="textarea" placeholder="もっと詳しく！(例:2人でパンケーキ食べたい)" name="body" value="{{old('name')}}" class="form-control"></textarea> 
             <!--textarea追加りな-->
             <span class="help-block">{{$errors->first('body')}}</span>
         </div>
         {!! Form::submit('ヒマ', ['class' => 'btn btn-warning btn-lg active']) !!}
     <!--</form>-->
+      
     {{Form::close()}}
+  </div>  
+  
     
     @foreach ($posts as $post)
         <?php
@@ -148,22 +147,28 @@
             <img src="{{$imgPath}}" width="400px" height="300px" alt="photo">
         </p>
         
-   
+        <!--<p>詳しくは: {!! link_to_route('hiima.show', $post->id, ['id' => $post->id]) !!}</p>-->
         <br>
-        <a href="{{Route('hiima.show', $post->id)}}"><img src="image/mini.hiima1.png" width="50px" height="50px" alt="詳しくはコチラ"></a>
-        <br>
-        <!--投稿内容-->
+        <a href="{{Route('hiima.show', $post->id)}}"><img src="image/mini.hiima1.png" width="150px" height="50px" alt="詳しくはコチラ" class="kochira_img" ></a>
+
+     
+    
+
+ 
+        
         <p><span class="glyphicon glyphicon-user" aria-hidden="true"></span> : {!! link_to_route('users.show', $user->nickname, ['id' => $post->user_id]) !!}</p> <!--追加したよ。ばなな-->
         <br>
         <p><span class="glyphicon glyphicon-tags" aria-hidden="true"></span> : @foreach ($post->tags as $tag) {{ $tag->name }} @endforeach</p>
         <br>
         <p><span class="glyphicon glyphicon-heart" aria-hidden="true"></span> :{!! link_to_route('hiima.show', $post->body, ['id' => $post->id]) !!}</p>
         <br>
-        <p><span class="glyphicon glyphicon-time" aria-hidden="true"></span> : {{ $post->created_at }}</p>
+        
+
+         <p>投稿時間: {{ $post->created_at }}</p>
          
             <div>
 
-                @if (Auth::user()->id == $post->user_id)
+                @if (Auth::user()->id == $user_id)
                     {!! Form::open(['route' => ['hiima.destroy', $post->id], 'method' => 'delete']) !!}
                     
                      <!--{{ Form::hidden('invisible',$post->id)}}-->
@@ -171,10 +176,7 @@
                         {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-xs']) !!}
                     {!! Form::close() !!}
                 @endif
-                <br>
             </div>
-         <!--投稿内容ここまで-->
-
     </div>
     @endforeach
 @endsection
