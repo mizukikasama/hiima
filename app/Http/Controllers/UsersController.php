@@ -23,21 +23,41 @@ class UsersController extends Controller
     public function show($id) 
     {   
         $user = User::find($id);
+        
         // $posts = $user->posts()->orderBy('created_at', 'desc')->paginate(10); //いくつ表示させるかを変更（りな）
         $data = [
             'user' => $user,
-            'histories' => $user->posts()
+            'histories' => $user->posts()->orderBy('created_at', 'desc')
         //     'posts' => $posts, //microposts→postsに変更そしてコメントアウト（りな）
         ];
 
          $data += $this->counts($user);
-
+        
         return view('users.show', $data);
+        
     }
     
     
-    
-    
+// 以下追加かほ    
+    public function edit(Request $request, $id)
+    {
+        $user = \Auth::user();//User::find($id);
+        //
+        // save 
+        $user->profile = $_POST['body'];
+        $user->save();
+        return  redirect()->back();
+/*
+        $data = [
+            'user' => $user,
+            'histories' => $user->feed_histories()
+        ];
+
+         $data += $this->counts($user);
+
+        return view('users.edit', $data);
+  */     
+    }
     
     
     

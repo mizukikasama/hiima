@@ -10,7 +10,7 @@
 </p>
 <h1 id="top">
     @if (Auth::check())
-                                <p>{!! link_to_route('users.show', Auth::user()->nickname, ['id' => Auth::id()]) !!}さんはどこで何かしたい？</p>
+                                <p>{!! link_to_route('users.show', Auth::user()->nickname, ['id' => Auth::id()]) !!}さんはどこで何がしたい？</p>
                             </ul>
                         </li>
                     @else
@@ -28,6 +28,7 @@
        
        
        <!--tag-->
+       <div class = "rina_aki">
         <div class="form-group @if(!empty($errors->first('name'))) has-error @endif">
 
 
@@ -45,7 +46,15 @@
 
         <span class="help-block">{{$errors->first('name')}}</span>
             @endforeach 
-
+        </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            
+            <h5>2.何を(複数選択不可)</h5>
 
 
  <!--この下はラジオボックス-->
@@ -60,9 +69,8 @@
 
 
            <!--</div> -->
-            
-        </div>
-
+           <br>
+    
         <!--body plaeholder追加、かほ-->
         <div class="form-group @if(!empty($errors->first('body'))) has-error @endif">
             <textarea input type="textarea" placeholder="もっと詳しく！(例:2人でパンケーキ食べたい)" name="body" value="{{old('name')}}" class="form-control"></textarea> 
@@ -71,7 +79,10 @@
         </div>
         {!! Form::submit('ヒマ', ['class' => 'btn btn-warning btn-lg active']) !!}
     <!--</form>-->
+      
     {{Form::close()}}
+  </div>  
+  
     
     @foreach ($posts as $post)
         <?php
@@ -138,7 +149,7 @@
         
         <!--<p>詳しくは: {!! link_to_route('hiima.show', $post->id, ['id' => $post->id]) !!}</p>-->
         <br>
-        <a href="{{Route('hiima.show', $post->id)}}"><img src="image/mini.hiima1.png" width="150px" height="50px" alt="詳しくはコチラ"></a>
+        <a href="{{Route('hiima.show', $post->id)}}"><img src="image/mini.hiima1.png" width="150px" height="50px" alt="詳しくはコチラ" class="kochira_img" ></a>
 
      
     

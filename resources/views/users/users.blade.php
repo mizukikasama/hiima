@@ -1,6 +1,12 @@
+
 <!--全替えリナ-->
+  <link rel="stylesheet" href="{{ secure_asset('css/users.css') }}">
+
   <link rel="stylesheet" href="{{ secure_asset('css/icon.css') }}">
+
 @if (count($users) > 0)
+<br>
+<br>
 <ul class="media-list">
 @foreach ($users as $user)
     <li class="media">

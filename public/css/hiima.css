@@ -1,10 +1,11 @@
 body {
-    background-image: url("haikei1.himawari.jpg");
+    background-image: url("rina_aki1.jpg");
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
     color: white;
+    
 }
 
 h1 {
@@ -20,10 +21,16 @@ h1, h5, p{
   padding-top: 20px;
 }
 
-.box {
-    
-}
 
+
+.rina_aki {
+    padding: 20px;
+    margin: 40px 0;
+    width: 100%;
+    background: #9acce3;
+    border-radius: 8px;
+    color: #724938;
+}
 
 /*ここから下がチェックボックス*/
 /*.checkbox-wrap{*/
@@ -40,7 +47,7 @@ h1, h5, p{
 }
 .label-checkbox .lever{
 　font-family: 'fantasy';
-  color: #E5DCD1;
+  color: white;
   font-weight: bold;
   display: inline-block;
   padding: 8px 40px;
@@ -106,7 +113,7 @@ h1, h5, p{
 .label-radio{
   float: left;
   cursor: pointer;
-  color: #E5DCD1;
+  color: white;
   font-weight: bold;
   letter-spacing: 0;
   display: inline-block;
@@ -187,11 +194,11 @@ h1, h5, p{
     position: relative;
     padding: 0.5em 0.7em;
     margin: 2em 0;
-    background: #ffffdb;
-    color: #6f4b3e;
+    background: #eabd00;
+    color: white;
     font-weight: bold;
     display: inline-block;
-    width: 30%;
+    width: 24%;
     
 }
 .posts:after {
@@ -200,7 +207,7 @@ h1, h5, p{
     top: 100%;
     left: 30px;
     border: 15px solid transparent;
-    border-top: 15px solid #ffffdb;
+    border-top: 15px solid #eabd00;
     width: 0;
     height: 0;
 }
@@ -240,7 +247,10 @@ h1, h5, p{
     z-index: -2;
 }
 
-
+a {
+    color: white;
+    text-decoration: none;
+}
 /*ここまでpostのCSS(りな)*/
 
 .pagetop
@@ -277,8 +287,28 @@ h1, h5, p{
 }
 
 .btn{
-     font-family: 'Amatic SC', cursive;
-     font-size: 15px;
+   position: relative;
+   display: inline-block;
+   font-weight: bold;
+   padding: 0.25em 0;
+   text-decoration: none;
+   color: white;  
+   width:100px; 
+}
+.btn:before{
+       position: absolute;
+   content: '';
+   width: 100%;
+   height: 4px;
+   top:100%;
+   left: 0;
+   border-radius: 3px;
+   background:#550000;
+   transition: .2s;
+}
+.btn:hover:before{
+    top: -webkit-calc(100% - 3px);
+    top: calc(100% - 3px);
 }
 
 .nextbtn {
@@ -292,6 +322,21 @@ img {
     height: 100%;
 }
 
+.kochira_img{
+    width:55%;
+    height:55%;
+    margin-bottom:25px;
+}
+
+/*詳しく*/
+.kochira_img{
+    width:55%;
+    height:55%;
+    margin-bottom:25px;
+}
+
+
+
 
 
 /*このしたが詳細ページの外枠だよ（りな）*/
@@ -304,6 +349,7 @@ img {
     font-family: "メイリオ", sans-serif;
     font-weight: bold;
     color: white;/*文字*/
+    background-color:#4d639f; 
 }
 .sample_box3_1 .sample_box_title{
     position: absolute;
@@ -330,4 +376,5 @@ img {
 ol {
     list-style-type: none;
     list-style-image: url('mini.hiima.logo.png');
+    padding-left:100px;
   }
