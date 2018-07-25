@@ -8,7 +8,8 @@
     <img src="css/hiima.logo.png"/>
     </a>
 </p>
-<h1 id="top">〇〇さんは今日どこで何したい？</h1>
+
+<h1 id="top">さんは今日どこで何したい？</h1>
 
    {{$errorMessage}}
    {{Form::open(['route'=>'hiima.store'])}}
