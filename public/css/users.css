@@ -8,3 +8,8 @@ body {
     font-family: "メイリオ", sans-serif;
     font-weight: bold;
 }
+
+.media-left {
+  width: 100px;
+}
+
