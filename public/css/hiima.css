@@ -292,6 +292,13 @@ img {
     height: 100%;
 }
 
+/*詳しく*/
+.kochira_img{
+    width:55%;
+    height:55%;
+    margin-bottom:25px;
+}
+
 
 
 /*このしたが詳細ページの外枠だよ（りな）*/

@@ -118,7 +118,7 @@
                 $user_id = $post->tags()->get()[0]->pivot->user_id;
                 $user = App\User::find($post->user_id);
                 // $user = $post->users()->get();
-               // echo App\User::find($user_id)->name;
+               // echo App\User::find($user_id)->name;""
                 ?>
 
         <p>
@@ -127,7 +127,7 @@
         
         <!--<p>詳しくは: {!! link_to_route('hiima.show', $post->id, ['id' => $post->id]) !!}</p>-->
         <br>
-        <a href="{{Route('hiima.show', $post->id)}}"><img src="image/mini.hiima1.png" width="150px" height="50px" alt="詳しくはコチラ"></a>
+        <a href="{{Route('hiima.show', $post->id)}}"><img src="image/mini.hiima1.png" width="150px" height="50px" alt="詳しくはコチラ"class="kochira_img"></a>
 
      
     
