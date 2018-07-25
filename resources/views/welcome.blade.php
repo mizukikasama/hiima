@@ -10,8 +10,9 @@
         {{ $user->name }}
     @else
     
+
     <!--ばななへ　このしたは背景固定のやつ（りな）-->
-<main>
+<main id ="top">
       <div class="cd-fixed-bg cd-bg-1">
          <!--ばななへ　ここまでだよ（りな）-->
     
@@ -22,7 +23,7 @@
         
         <!--スクロールのやつ（りな）-->
             <div class = "scroll-button">   
-              <a><span></span><span></span><span></span>Learn More</a>
+              <a href ="#scroll" title"Hiimaについてもっと知る！"><span></span><span></span><span></span>Learn More</a>
             </div>
         </div>
      <!--背景を固定したスクロールできるやつ（りな）-->
@@ -32,7 +33,7 @@
 </main>   
   
   <!--ばななへ　ここから他の画像を背景にしているよ（りな）-->
-  
+<div id="scroll">  
     <div class="cd-scrolling-bg cd-color-1">
     <!--    <div class="cd-container">-->
     <!--        <p>-->
@@ -84,8 +85,6 @@
 
 
 <!--ばななへ　ここまでだよ（りな）-->
-
-
 
 
      
