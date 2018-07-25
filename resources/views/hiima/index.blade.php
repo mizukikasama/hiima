@@ -8,8 +8,18 @@
     <img src="css/hiima.logo.png"/>
     </a>
 </p>
+<h1 id="top">
+    @if (Auth::check())
+                                <p>{!! link_to_route('users.show', Auth::user()->nickname, ['id' => Auth::id()]) !!}さんはどこで何かしたい？</p>
+                            </ul>
+                        </li>
+                    @else
+                        <li>{!! link_to_route('signup.get', 'Signup') !!}</li>
+                        <li>{!! link_to_route('login', 'Login') !!}</li>
+                    @endif
+                        
 
-<h1 id="top">さんは今日どこで何したい？</h1>
+</h1>
 
    {{$errorMessage}}
    {{Form::open(['route'=>'hiima.store'])}}
