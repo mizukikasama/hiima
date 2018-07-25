@@ -8,4 +8,6 @@
 
 {!! link_to_route('hajimete.hajimete2', 'next', '',  ['class' => 'button']) !!}
 
+{!! link_to_route('hiima.index', 'back', '',  ['class' => 'back_btn']) !!}
+
 @endsection
