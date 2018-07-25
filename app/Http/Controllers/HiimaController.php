@@ -52,7 +52,10 @@ class HiimaController extends Controller
             [\Form::text("body","{{old('name')}}",['class'=>"form-control"])
             ]);*/
         $errorMessage = '';
-        if(empty($_POST['body']??'') || empty($_POST['tags']??'')) {
+        if(empty($_POST['body']??'') 
+        || empty($_POST['tags']??'')
+        || empty($request->categories)
+        ) {
             $errorMessage =  '必須項目です。';
         } else {
             // foreach($request->tags as $tag)

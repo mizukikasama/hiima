@@ -201,7 +201,7 @@ h1, h5, p{
     top: 100%;
     left: 30px;
     border: 15px solid transparent;
-    border-top: 15px solid #ffffdb;
+    border-top: 15px solid #eabd00;
     width: 0;
     height: 0;
 }
@@ -337,3 +337,5 @@ ol {
     list-style-type: none;
     list-style-image: url('mini.hiima.logo.png');
   }
+  
+  
