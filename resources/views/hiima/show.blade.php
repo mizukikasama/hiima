@@ -3,8 +3,6 @@
 @extends('layouts.app')
 @section('content')<!--内容を確認するよリサ-->
 
-
-
 <div class="sample_box3_1">
     <span class="sample_box_title">
         <h1>  {{ $user_id[0]->nickname }}のやりたいこと</h1>
@@ -20,5 +18,4 @@
 </ol>
     
 </div>
-    
 @endsection

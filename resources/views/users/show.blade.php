@@ -6,6 +6,8 @@
 <!doctype html> 
 <link rel="stylesheet" href="{{ secure_asset('css/show.css') }}">
 
+<br>
+<br>
 
     <div class="row">
         <aside class="col-xs-4">
@@ -36,31 +38,32 @@
         </div>
         
 
-
+        <div class="col-xs-8 col-offset-xs-4">
         @foreach($histories->get() as $h)
         
             <!--{{ App\User::find($h->user_id) }}-->
             <!--{{ App\Post::find($h->post_id) }}-->
             <!--{{ App\Tag::find($h->tag_id) }}-->
         <hr>
-       <div style="display:block; margin-top:40px;">
+       <div style="display:block;margin-top:40px;">
        
-        <div style="display:inline-block;">
+        <div style="display:inline-block; ">
      
                 <img class="media-object img-rounded img-responsive" src="{{ asset(App\User::image_map($h->user_id))}}" alt="" style='width:100px;'>
       </div>
         <div style="display:inline-block; margin-top:30px;">
       
-        <p>ユーザー名: {{App\User::find($h->user_id)->nickname}}</p> <!--追加したよ。ばなな-->
-        <p>カテゴリー:  @foreach ($h->tags as $tag) {{ $tag->name }} @endforeach </p>
-        <p>内容: {{ App\Post::find($h->id)->body }}</p>
-         <p>投稿時間: {{ App\Post::find($h->id)->created_at }}</p>
+        <p><span class="glyphicon glyphicon-user" aria-hidden="true"></span>: {{App\User::find($h->user_id)->nickname}}</p> <!--追加したよ。ばなな-->
+        <p><span class="glyphicon glyphicon-tags" aria-hidden="true"></span>: @foreach ($h->tags as $tag) {{ $tag->name }} @endforeach </p>
+        <p><span class="glyphicon glyphicon-heart" aria-hidden="true"></span>: {{ App\Post::find($h->id)->body }}</p>
+        <p><span class="glyphicon glyphicon-time" aria-hidden="true"></span>: {{ App\Post::find($h->id)->created_at }}</p>
       </div>
       </div>
 
 
 
         @endforeach
+        </div>
     </div>
 @endsection
                 

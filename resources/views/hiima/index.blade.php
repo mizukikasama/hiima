@@ -3,6 +3,7 @@
 
 <!doctype html> <!--エラー追加したよ。りさ-->
 <link rel="stylesheet" href="{{ secure_asset('css/hiima.css') }}">
+
 <p class= "pagetop">
     <a href="#top" title="ページトップへ戻る">
     <img src="css/hiima.logo.png"/>
@@ -58,8 +59,10 @@
 
 
  <!--この下はラジオボックス-->
+        
             @foreach ($categories as $category)
             <label class="label-radio">
+                
                 
                 {!! Form::label('categories[]',' ') !!}
                 {!! Form::radio('categories[]',$category->id, null ) !!}<span class="lever">{{ $category->name }}</span>
