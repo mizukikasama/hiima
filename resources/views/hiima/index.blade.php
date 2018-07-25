@@ -46,6 +46,7 @@
         <span class="help-block">{{$errors->first('name')}}</span>
             @endforeach
         
+        
         <br>
         <br>
         <br>
@@ -159,7 +160,7 @@
          
             <div>
 
-                @if (Auth::user()->id == $user_id)
+                @if (Auth::user()->id == $post->user_id)
                     {!! Form::open(['route' => ['hiima.destroy', $post->id], 'method' => 'delete']) !!}
                     
                      <!--{{ Form::hidden('invisible',$post->id)}}-->
@@ -167,6 +168,7 @@
                         {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-xs']) !!}
                     {!! Form::close() !!}
                 @endif
+                <br>
             </div>
          <!--投稿内容ここまで-->
 

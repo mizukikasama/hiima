@@ -1,18 +1,24 @@
+<link rel="stylesheet" href="{{ secure_asset('css/hiima.css') }}">
+
 @extends('layouts.app')
 @section('content')<!--内容を確認するよリサ-->
 
-    <h1>内容表示</h1>
 
-    <div class="row">
-        <div class="col-sm-12">
-            <a href="/form" class="btn btn-primary" style="margin:20px;">フォームに戻る</a>
-        </div>
-    </div>
 
-    <!-- table -->
-    <table class="table table-striped">
-        <tr><td>タグ</td><td>{{$inputs["name"]}}</tr>
-        <tr><td>内容</td><td>{{$inputs["body"]}}</tr>
-    </table>
-
-@stop
+<div class="sample_box3_1">
+    <span class="sample_box_title">
+        <h1>  {{ $user_id[0]->nickname }}のやりたいこと</h1>
+        
+    </span>
+    <br>
+    <br>
+<ol>
+        <li>場所:@foreach($tags as $tag){{ $tag->name }}  @endforeach</li>    
+        <li>カテゴリー:{{ $category->name }}</li>
+        <li>したいこと:{{ $post->body }}</li>
+        <li>参加者:</li>
+</ol>
+    
+</div>
+    
+@endsection

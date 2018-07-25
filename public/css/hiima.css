@@ -336,4 +336,6 @@ img {
 ol {
     list-style-type: none;
     list-style-image: url('mini.hiima.logo.png');
+    padding-left:100px;
+    
   }
