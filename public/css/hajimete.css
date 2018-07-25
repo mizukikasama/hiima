@@ -43,26 +43,19 @@
 
 
 .button{
-  display: block;
-  height: 50px;
-  width: 200px;
-  font-size:50px; 
-  text-decoration: none;
-  line-height: 40px;
-  text-align: center;
-  border-radius: 20px;
-  color: #fff;
-  -webkit-box-shadow: 1px 1px 1px #e9e9e9;
-  -moz-box-shadow: 1px 1px 1px #e9e9e9;
-  box-shadow: 1px 1px 1px #e9e9e9;
-  background: #e4016f;
-  background: -webkit-gradient(linear, left top, left bottom, from(#e4016f), to(#f13690));
-  background: -moz-linear-gradient(top, #e4016f, #f13690);
-  background: -o-linear-gradient(top, #e4016f, #f13690);
-  background: -ms-linear-gradient(top, #e4016f, #f13690);
-  background: linear-gradient(top, #e4016f, #f13690);
-  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#e4016f', endColorstr='#f13690');
-  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#e4016f', endColorstr='#f13690')";
+  display: inline-block;
+    padding: 20px 40px;
+	border-radius: 50px;
+    text-decoration: none;
+    color: #FFF;
+    background-image: -webkit-linear-gradient(45deg, #FFC107 0%, #ff8b5f 100%);
+    background-image: linear-gradient(45deg, #FFC107 0%, #ff8b5f 100%);
+    transition: .4s;
+    position:absolute;
+  	bottom:200px;
+	  text-align:center;
+	  margin-left : 530px ; 
+	  
 }
 .button:active{  /* クリックした時 */
   -ms-transform: translateY(2px);
@@ -71,8 +64,71 @@
   box-shadow: none;
 }
 
+.button:hover {
+    background-image: -webkit-linear-gradient(45deg, #FFC107 0%, #f76a35 100%);
+    background-image: linear-gradient(45deg, #FFC107 0%, #f76a35 100%);
+}
 .button{
   position: fixed;
  bottom: 20px;
  right: 15px;
 }
+
+
+/*havefun*/
+.havefun_button{
+    display: inline-block;
+    padding: 20px 40px;
+	border-radius: 50px;
+    text-decoration: none;
+    color: #FFF;
+    background-image: -webkit-linear-gradient(45deg, #FFC107 0%, #ff8b5f 100%);
+    background-image: linear-gradient(45deg, #FFC107 0%, #ff8b5f 100%);
+    transition: .4s;
+    position:absolute;
+  	bottom:200px;
+	  text-align:center;
+	  margin-left : 530px ; 
+	  
+	
+	
+}
+
+.havefun_button:hover {
+    background-image: -webkit-linear-gradient(45deg, #FFC107 0%, #f76a35 100%);
+    background-image: linear-gradient(45deg, #FFC107 0%, #f76a35 100%);
+}
+
+
+/*戻るボタン*/
+
+.back_btn{  display: inline-block;
+    padding: 20px 40px;
+	border-radius: 50px;
+    text-decoration: none;
+    color: #FFF;
+    background-image: -webkit-linear-gradient(45deg, #FFC107 0%, #ff8b5f 100%);
+    background-image: linear-gradient(45deg, #FFC107 0%, #ff8b5f 100%);
+    transition: .4s;
+    position:absolute;
+  	bottom:200px;
+	  text-align:center;
+	  margin-left : 530px ;
+	  
+}
+
+.back_btn{
+position: fixed;
+ bottom: 20px;
+ right: 150px;
+}
+ 
+
+
+.back_btn:hover {
+    background-image: -webkit-linear-gradient(45deg, #FFC107 0%, #f76a35 100%);
+    background-image: linear-gradient(45deg, #FFC107 0%, #f76a35 100%);
+}
+
+
+
