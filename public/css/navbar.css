@@ -1,17 +1,19 @@
 .navbar{
   font-family: 'Amatic SC', cursive;
   margin:0; 
+  font-family: "メイリオ", sans-serif;
+    font-weight: bold;
 
 }
 
 /* navbar 全体の背景色とボーダーカラー */
 .navbar-default {
 background-color: #9acce3;
-border-color: #3e6962;
+border-color: #44aeea;
 }
 /* navbar テキストカラー */
 .navbar-default .navbar-nav > li > a {
-color: #ffffff;
+color: white;
 }
 /* navbar hover,focus時のテキストカラー */
 .navbar-default .navbar-nav > li > a:hover,
