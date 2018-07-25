@@ -104,6 +104,8 @@ class HiimaController extends Controller
                 $post = Post::find($id);
 
                 $tags = $post->tags()->get();//[0]->pivot->tag_id;
+                
+                $category = Category::find($id);
 
                 $user_id = $post->user()->get();
     
@@ -112,6 +114,7 @@ class HiimaController extends Controller
                     return view('hiima.show', [
                         'post' => $post,
                         'tags' => $tags,
+                        'category' => $category,
                         'user_id' => $user_id
                     ]);
               //  } else {
@@ -192,4 +195,3 @@ class HiimaController extends Controller
 
     //     return redirect()->back();
     // }
-
