@@ -9,17 +9,17 @@
     </a>
 </p>
 <h1 id="top">
+    <br>
     @if (Auth::check())
-                                <p>{!! link_to_route('users.show', Auth::user()->nickname, ['id' => Auth::id()]) !!}さんはどこで何かしたい？</p>
+                                <p>{!! link_to_route('users.show', Auth::user()->nickname, ['id' => Auth::id()]) !!}さんはどこで何がしたい？</p>
                             </ul>
                         </li>
                     @else
                         <li>{!! link_to_route('signup.get', 'Signup') !!}</li>
                         <li>{!! link_to_route('login', 'Login') !!}</li>
                     @endif
-                        
-
 </h1>
+    <br>
 
    {{$errorMessage}}
    {{Form::open(['route'=>'hiima.store'])}}
@@ -44,7 +44,15 @@
             </label>
 
         <span class="help-block">{{$errors->first('name')}}</span>
-            @endforeach 
+            @endforeach
+        
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        
+        <h5>2.何を(複数選択不可)</h5>
 
 
 
@@ -139,23 +147,17 @@
         <!--<p>詳しくは: {!! link_to_route('hiima.show', $post->id, ['id' => $post->id]) !!}</p>-->
         <br>
         <a href="{{Route('hiima.show', $post->id)}}"><img src="image/mini.hiima1.png" width="150px" height="50px" alt="詳しくはコチラ"></a>
-
-     
-    
-
  
         
+        <!--投稿内容-->
         <p><span class="glyphicon glyphicon-user" aria-hidden="true"></span> : {!! link_to_route('users.show', $user->nickname, ['id' => $post->user_id]) !!}</p> <!--追加したよ。ばなな-->
         <br>
         <p><span class="glyphicon glyphicon-tags" aria-hidden="true"></span> : @foreach ($post->tags as $tag) {{ $tag->name }} @endforeach</p>
         <br>
         <p><span class="glyphicon glyphicon-heart" aria-hidden="true"></span> :{!! link_to_route('hiima.show', $post->body, ['id' => $post->id]) !!}</p>
         <br>
-        
-
-         <p>投稿時間: {{ $post->created_at }}</p>
-         
-            <div>
+       
+                    <div>
 
                 @if (Auth::user()->id == $user_id)
                     {!! Form::open(['route' => ['hiima.destroy', $post->id], 'method' => 'delete']) !!}
@@ -166,6 +168,10 @@
                     {!! Form::close() !!}
                 @endif
             </div>
+
+         <p>投稿時間: {{ $post->created_at }}</p>
+         <!--投稿内容ここまで-->
+
     </div>
     @endforeach
 @endsection
