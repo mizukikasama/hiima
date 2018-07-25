@@ -5,6 +5,7 @@
 
 <div class="sample_box3_1">
     <span class="sample_box_title">
+        <br>
         <h1>  {{ $user_id[0]->nickname }}のやりたいこと</h1>
         
     </span>
