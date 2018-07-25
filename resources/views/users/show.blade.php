@@ -5,7 +5,6 @@
 
 <!doctype html> 
 <link rel="stylesheet" href="{{ secure_asset('css/show.css') }}">
-</p>
 
     <div class="row">
         <aside class="col-xs-4">
