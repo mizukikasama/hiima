@@ -9,17 +9,17 @@
     </a>
 </p>
 <h1 id="top">
+    <br>
     @if (Auth::check())
-                                <p>{!! link_to_route('users.show', Auth::user()->nickname, ['id' => Auth::id()]) !!}さんはどこで何かしたい？</p>
+                                <p>{!! link_to_route('users.show', Auth::user()->nickname, ['id' => Auth::id()]) !!}さんはどこで何がしたい？</p>
                             </ul>
                         </li>
                     @else
                         <li>{!! link_to_route('signup.get', 'Signup') !!}</li>
                         <li>{!! link_to_route('login', 'Login') !!}</li>
                     @endif
-                        
-
 </h1>
+    <br>
 
    {{$errorMessage}}
    {{Form::open(['route'=>'hiima.store'])}}
@@ -44,7 +44,15 @@
             </label>
 
         <span class="help-block">{{$errors->first('name')}}</span>
-            @endforeach 
+            @endforeach
+        
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        
+        <h5>2.何を(複数選択不可)</h5>
 
 
 
@@ -140,6 +148,7 @@
         <br>
         <a href="{{Route('hiima.show', $post->id)}}"><img src="image/mini.hiima1.png" width="50px" height="50px" alt="詳しくはコチラ"></a>
         <br>
+        <!--投稿内容-->
         <p><span class="glyphicon glyphicon-user" aria-hidden="true"></span> : {!! link_to_route('users.show', $user->nickname, ['id' => $post->user_id]) !!}</p> <!--追加したよ。ばなな-->
         <br>
         <p><span class="glyphicon glyphicon-tags" aria-hidden="true"></span> : @foreach ($post->tags as $tag) {{ $tag->name }} @endforeach</p>
@@ -147,9 +156,6 @@
         <p><span class="glyphicon glyphicon-heart" aria-hidden="true"></span> :{!! link_to_route('hiima.show', $post->body, ['id' => $post->id]) !!}</p>
         <br>
         <p><span class="glyphicon glyphicon-time" aria-hidden="true"></span> : {{ $post->created_at }}</p>
-        
-
-         <!--<p>投稿時間: {{ $post->created_at }}</p>-->
          
             <div>
 
@@ -162,6 +168,8 @@
                     {!! Form::close() !!}
                 @endif
             </div>
+         <!--投稿内容ここまで-->
+
     </div>
     @endforeach
 @endsection
