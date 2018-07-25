@@ -43,7 +43,7 @@
             <!--</form>-->
            </div>
             {{Form::close()}}
-            @include('user_follow.follow_button', ['user' => $user])
+            
         </aside>
         <div class="col-xs-8">
             <ul class="nav nav-tabs nav-justified">
