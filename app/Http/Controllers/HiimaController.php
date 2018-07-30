@@ -105,7 +105,7 @@ class HiimaController extends Controller
 
                 $tags = $post->tags()->get();//[0]->pivot->tag_id;
                 
-                $category = Category::find($post->id);
+                $category = Category::find($post->category_id);
 
                 $user_id = $post->user()->get();
     
