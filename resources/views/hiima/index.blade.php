@@ -21,7 +21,6 @@
 
 </h1>
 
-   {{$errorMessage}}
    {{Form::open(['route'=>'hiima.store'])}}
     <!--<form method="post" action=hiima.store>-->
         {{ csrf_field() }}
@@ -30,9 +29,12 @@
        <!--tag-->
        <div class = "rina_aki">
         <div class="form-group @if(!empty($errors->first('name'))) has-error @endif">
+            
+            <p>*入力が必須の項目です。</p>
+           <h6>{{$errorMessage}}</h6>
+           <br>
 
-
-        <h5>1.どこで(複数選択OK)</h5>
+        <h5>1.どこで(複数選択OK)*</h5>
 
 <!--<div class ="box">-->
 <!--ここから下はチェックボックス-->
@@ -54,7 +56,7 @@
             <br>
             <br>
             
-            <h5>2.何を(複数選択不可)</h5>
+            <h5>2.何を(複数選択不可)*</h5>
 
 
  <!--この下はラジオボックス-->
@@ -70,6 +72,11 @@
 
            <!--</div> -->
            <br>
+           <br>
+           <br>
+           <br>
+           
+            <h5>3.詳細*</h5>
     
         <!--body plaeholder追加、かほ-->
         <div class="form-group @if(!empty($errors->first('body'))) has-error @endif">

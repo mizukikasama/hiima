@@ -56,7 +56,7 @@ class HiimaController extends Controller
         || empty($_POST['tags']??'')
         || empty($request->categories)
         ) {
-            $errorMessage =  '必須項目です。';
+            $errorMessage =  '必須項目を全て満たしてください。';
         } else {
             // foreach($request->tags as $tag)
                 // {
