@@ -19,7 +19,9 @@
     
         <div class="text-center">
                 <p class="title-logo"><img src="image/titlelogo.png"></p>
-                <p class="hiima-kun"><a href="{{Route('signup.get')}}"><img src="image/hiima.logo.png" alt=""></a></p>
+                <div class="hiima-kun">
+                    <p>Touch me and Sign up!</p><a href="{{Route('signup.get')}}"><img src="image/hiima.logo.png" alt=""></a>
+                </div>
         
         <!--スクロールのやつ（りな）-->
             <div class = "scroll-button">   
