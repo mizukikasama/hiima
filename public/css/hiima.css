@@ -17,6 +17,12 @@ h1, h5, p{
     font-weight: bold;
 }
 
+h6{
+    font-family: "メイリオ", sans-serif;
+    font-weight: bold;
+    color:red;
+}
+
 .pt20{
   padding-top: 20px;
 }

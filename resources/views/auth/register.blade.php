@@ -12,7 +12,7 @@
 
             {!! Form::open(['route' => 'signup.post']) !!}
                 <div class="form-group">
-                    {!! Form::label('nickname', 'Nickname') !!}
+                    {!! Form::label('nickname', 'Nickname ※本名以外も可') !!}
                     {!! Form::text('nickname', null, ['class' => 'form-control' ,'placeholder' => '例: ばなな']) !!}
                     <br>
                         <!--<p>例: ばなな</p>-->
@@ -20,7 +20,7 @@
                 </div>
                 
                  <div class="form-group">
-                    {!! Form::label('hiima_id', 'User ID') !!}
+                    {!! Form::label('hiima_id', 'User ID ※ログインするために必要です') !!}
                     {!! Form::text('hiima_id', null, ['class' => 'form-control' ,'placeholder' => '例: nana7e']) !!}
                     <br>
                         <!--<p>例: nana7e</p>-->
